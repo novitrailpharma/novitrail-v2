@@ -1,0 +1,482 @@
+[
+  {
+    "sno": "1",
+    "formulation": {
+      "drug": "Bacillus Clausii Spore Suspension",
+      "strength": ["2 Bn / 5 ml", "4 Bn / 5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Probiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "2",
+    "formulation": {
+      "drug": "Bacillus Clausii Spore Suspension + Zinc",
+      "strength": ["2 Bn / 5 ml", "4 Bn / 5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Probiotic + Mineral",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "3",
+    "formulation": {
+      "drug": "Bacillus Clausii Spore Suspension + Fructo-Oligosaccharide (FOS)",
+      "strength": ["2 Bn / 5 ml", "4 Bn / 5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Probiotic + Prebiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "4",
+    "formulation": {
+      "drug": "Lactobacillus Reuteri",
+      "strength": ["26.5 mg (100 Mn CFU)"],
+      "route": "Oral",
+      "pack": "Chewable Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Probiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "5",
+    "formulation": {
+      "drug": "Lactobacillus Reuteri",
+      "strength": ["19 mg/ml"],
+      "route": "Oral",
+      "pack": "5 ml Drops"
+    },
+    "type": "Drops",
+    "therapeutic_class": "Probiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "6",
+    "formulation": {
+      "drug": "Saccharomyces Boulardii",
+      "strength": ["250 mg (5 Bn CFU)"],
+      "route": "Oral",
+      "pack": "Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Probiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "7",
+    "formulation": {
+      "drug": "Saccharomyces Boulardii",
+      "strength": ["250 mg (5 Bn CFU)"],
+      "route": "Oral",
+      "pack": "Powder for Suspension"
+    },
+    "type": "Powder",
+    "therapeutic_class": "Probiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "8",
+    "formulation": {
+      "drug": "2,4 Dichlorobenzyl Alcohol + Amylmetacresol",
+      "strength": ["1.2 mg + 0.6 mg"],
+      "route": "Oral",
+      "pack": "Lozenges"
+    },
+    "type": "Lozenges",
+    "therapeutic_class": "Antiseptic / Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "9",
+    "formulation": {
+      "drug": "Acetyl L-Carnitine",
+      "strength": ["500 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Amino Acid Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "10",
+    "formulation": {
+      "drug": "Psyllium Husk",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Powder (Sachet & Jar)"
+    },
+    "type": "Powder",
+    "therapeutic_class": "Fiber Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "11",
+    "formulation": {
+      "drug": "Silymarin",
+      "strength": ["500 mg"],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Hepatoprotective",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "12",
+    "formulation": {
+      "drug": "Silymarin + Phosphatidylcholine",
+      "strength": ["200 mg + 150 mg"],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Hepatoprotective",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "13",
+    "formulation": {
+      "drug": "Siberian Ginseng Extract + Multivitamin + Multimineral",
+      "strength": ["20 mg"],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Adaptogen + Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "14",
+    "formulation": {
+      "drug": "Essential Phospholipids + Multivitamin",
+      "strength": ["300 mg"],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Hepatoprotective + Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "15",
+    "formulation": {
+      "drug": "Vitamin B-Complex + Zinc",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "16",
+    "formulation": {
+      "drug": "Multimineral + Multivitamin + Zinc + Lactobacillus",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Multivitamin + Probiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "17",
+    "formulation": {
+      "drug": "Iron + Multivitamin + Zinc",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Mineral + Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "18",
+    "formulation": {
+      "drug": "Vitamin E + Cod Liver Oil",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin + Omega Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "19",
+    "formulation": {
+      "drug": "Vitamin E + Omega Fatty Acid",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin + Omega Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "20",
+    "formulation": {
+      "drug": "Vitamin E + Omega-3 Fatty Acid",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin + Omega Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "21",
+    "formulation": {
+      "drug": "Cod Liver Oil",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Omega Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "22",
+    "formulation": {
+      "drug": "Vitamin A",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "23",
+    "formulation": {
+      "drug": "Vitamin A + D",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "24",
+    "formulation": {
+      "drug": "Vitamin D3",
+      "strength": ["1000 IU", "2000 IU", "60000 IU"],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "25",
+    "formulation": {
+      "drug": "Coenzyme Q-10 + Vitamin E",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Antioxidant Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "26",
+    "formulation": {
+      "drug": "L-Arginine",
+      "strength": ["3 g"],
+      "route": "Oral",
+      "pack": "Sachet"
+    },
+    "type": "Sachet",
+    "therapeutic_class": "Amino Acid Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "27",
+    "formulation": {
+      "drug": "L-Arginine",
+      "strength": ["1 g"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Amino Acid Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "28",
+    "formulation": {
+      "drug": "Vitamin D3",
+      "strength": ["800 IU/ml"],
+      "route": "Oral",
+      "pack": "30 ml Drops"
+    },
+    "type": "Drops",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "29",
+    "formulation": {
+      "drug": "Ferrous Ascorbate + Folic Acid",
+      "strength": ["30 mg + 100 mcg/ml"],
+      "route": "Oral",
+      "pack": "20 ml Drops"
+    },
+    "type": "Drops",
+    "therapeutic_class": "Iron + Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "30",
+    "formulation": {
+      "drug": "Multivitamin + Multimineral",
+      "strength": [],
+      "route": "Oral",
+      "pack": "30 ml Drops"
+    },
+    "type": "Drops",
+    "therapeutic_class": "Vitamin + Mineral Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "31",
+    "formulation": {
+      "drug": "Methylcobalamin",
+      "strength": ["1500 mcg"],
+      "route": "Oral",
+      "pack": "Mouth Dissolving Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Vitamin B12 Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "32",
+    "formulation": {
+      "drug": "Methylcobalamin + Vitamin B1 + Vitamin B6",
+      "strength": ["500 mcg + 100 mg + 100 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Vitamin B-Complex Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "33",
+    "formulation": {
+      "drug": "Pre & Probiotic Granules",
+      "strength": ["1.5 g"],
+      "route": "Oral",
+      "pack": "Sachet"
+    },
+    "type": "Granules",
+    "therapeutic_class": "Probiotic + Prebiotic",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "34",
+    "formulation": {
+      "drug": "Coenzyme Q10",
+      "strength": ["30 mg", "60 mg", "100 mg"],
+      "route": "Oral",
+      "pack": "Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Antioxidant Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "35",
+    "formulation": {
+      "drug": "Coenzyme Q10 + DHA + EPA",
+      "strength": ["100 mg + 90 mg + 60 mg"],
+      "route": "Oral",
+      "pack": "Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Antioxidant + Omega Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "36",
+    "formulation": {
+      "drug": "Omega-369",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Hard Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Omega Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "37",
+    "formulation": {
+      "drug": "S-Adenosyl L-Methionine",
+      "strength": ["200 mg", "400 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Amino Acid Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "38",
+    "formulation": {
+      "drug": "Calcium + Vitamin D3",
+      "strength": ["200 mg + 200 IU", "400 mg + 200 IU"],
+      "route": "Oral",
+      "pack": "Chewable Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Mineral + Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "39",
+    "formulation": {
+      "drug": "Calcium Carbonate + Vitamin D3",
+      "strength": ["625 mg + 1250 IU / 5 ml"],
+      "route": "Oral",
+      "pack": "200 ml Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Mineral + Vitamin Supplement",
+    "prod": "dietary-supplement"
+  },
+  {
+    "sno": "40",
+    "formulation": {
+      "drug": "Folic Acid",
+      "strength": ["5 mg"],
+      "route": "Oral",
+      "pack": "Sublingual Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "dietary-supplement"
+  }
+]

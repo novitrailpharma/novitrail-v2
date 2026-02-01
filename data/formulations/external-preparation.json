@@ -1,0 +1,590 @@
+[
+  {
+    "sno": "1",
+    "formulation": {
+      "drug": "Aceclofenac",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "30 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "NSAID (Topical)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "2",
+    "formulation": {
+      "drug": "Aciclovir",
+      "strength": ["5%"],
+      "route": "Topical",
+      "pack": "5 g, 10 g & 15 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antiviral",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "3",
+    "formulation": {
+      "drug": "Adapalene + Clindamycin Phosphate",
+      "strength": [],
+      "route": "Topical",
+      "pack": "15 g, 20 g & 30 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "Anti-acne Combination",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "4",
+    "formulation": {
+      "drug": "Adapalene",
+      "strength": ["0.1%"],
+      "route": "Topical",
+      "pack": "10 g & 15 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "Anti-acne",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "5",
+    "formulation": {
+      "drug": "Amorolfine",
+      "strength": ["0.25%"],
+      "route": "Topical",
+      "pack": "15 g & 30 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "6",
+    "formulation": {
+      "drug": "Betamethasone",
+      "strength": ["0.05%"],
+      "route": "Topical",
+      "pack": "10 g & 15 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "7",
+    "formulation": {
+      "drug": "Bifonazole",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "20 g & 50 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "8",
+    "formulation": {
+      "drug": "Calcipotriene + Betamethasone",
+      "strength": [],
+      "route": "Topical",
+      "pack": "60 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Psoriasis Treatment",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "9",
+    "formulation": {
+      "drug": "Calcipotriene",
+      "strength": ["0.005%"],
+      "route": "Topical",
+      "pack": "60 g Ointment & Cream"
+    },
+    "type": "Cream / Ointment",
+    "therapeutic_class": "Psoriasis Treatment",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "10",
+    "formulation": {
+      "drug": "Calcipotriene",
+      "strength": [],
+      "route": "Topical",
+      "pack": "60 ml Scalp Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Psoriasis Treatment",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "11",
+    "formulation": {
+      "drug": "Clindamycin + Nicotinamide",
+      "strength": [],
+      "route": "Topical",
+      "pack": "15 g, 20 g & 30 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "Anti-acne Combination",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "12",
+    "formulation": {
+      "drug": "Clindamycin",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "15 g, 20 g & 30 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "Antibiotic (Topical)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "13",
+    "formulation": {
+      "drug": "Clindamycin",
+      "strength": [],
+      "route": "Topical",
+      "pack": "60 ml Lotion"
+    },
+    "type": "Lotion",
+    "therapeutic_class": "Antibiotic (Topical)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "14",
+    "formulation": {
+      "drug": "Clobetasol Propionate + Fusidic Acid",
+      "strength": [],
+      "route": "Topical",
+      "pack": "15 g & 20 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid + Antibiotic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "15",
+    "formulation": {
+      "drug": "Clobetasol Propionate + Salicylic Acid",
+      "strength": [],
+      "route": "Topical",
+      "pack": "15 g & 30 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Steroid + Keratolytic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "16",
+    "formulation": {
+      "drug": "Clobetasol Propionate",
+      "strength": ["0.05%"],
+      "route": "Topical",
+      "pack": "15 g & 30 g Cream / Ointment"
+    },
+    "type": "Cream / Ointment",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "17",
+    "formulation": {
+      "drug": "Clobetasol Propionate + Neomycin Sulphate + Miconazole",
+      "strength": [],
+      "route": "Topical",
+      "pack": "15 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid + Antibiotic + Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "18",
+    "formulation": {
+      "drug": "Clotrimazole",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "10 g & 15 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "19",
+    "formulation": {
+      "drug": "Diclofenac + Menthol + Linseed Oil + Methyl Salicylate",
+      "strength": ["1%", "2%"],
+      "route": "Topical",
+      "pack": "30 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "NSAID + Counterirritant",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "20",
+    "formulation": {
+      "drug": "Diclofenac",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "15 g, 25 g, 30 g & 100 g Gel"
+    },
+    "type": "Gel",
+    "therapeutic_class": "NSAID (Topical)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "21",
+    "formulation": {
+      "drug": "Doxepin Hydrochloride",
+      "strength": ["5%"],
+      "route": "Topical",
+      "pack": "45 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antipruritic / Antidepressant (Topical use)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "22",
+    "formulation": {
+      "drug": "Eberconazole",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "30 g & 50 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "23",
+    "formulation": {
+      "drug": "Fluticasone",
+      "strength": ["0.05%"],
+      "route": "Topical",
+      "pack": "15 g & 30 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "24",
+    "formulation": {
+      "drug": "Fusidic Acid + Beclomethasone",
+      "strength": [],
+      "route": "Topical",
+      "pack": "10 g & 20 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "25",
+    "formulation": {
+      "drug": "Fusidic Acid",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "5 g, 7.5 g & 10 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antibiotic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "26",
+    "formulation": {
+      "drug": "Fusidic Acid",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "15 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antibiotic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "27",
+    "formulation": {
+      "drug": "Gamma Benzene Hexachloride + Cetrimide",
+      "strength": [],
+      "route": "Topical",
+      "pack": "60 ml & 100 ml Emulsion"
+    },
+    "type": "Emulsion",
+    "therapeutic_class": "Antiparasitic / Antiseptic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "28",
+    "formulation": {
+      "drug": "Halcinonide",
+      "strength": ["0.1%"],
+      "route": "Topical",
+      "pack": "60 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "29",
+    "formulation": {
+      "drug": "Halobetasol Propionate",
+      "strength": ["0.05%"],
+      "route": "Topical",
+      "pack": "15 g & 20 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "30",
+    "formulation": {
+      "drug": "Hydrocortisone",
+      "strength": ["0.1%", "2.5%"],
+      "route": "Topical",
+      "pack": "10 g, 15 g, 20 g & 30 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "31",
+    "formulation": {
+      "drug": "Ketoconazole + Zinc Pyrithione (ZPTO)",
+      "strength": [],
+      "route": "Topical",
+      "pack": "60 ml & 100 ml Shampoo"
+    },
+    "type": "Shampoo",
+    "therapeutic_class": "Antifungal + Antidandruff",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "32",
+    "formulation": {
+      "drug": "Ketoconazole",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "15 g, 30 g, 50 g & 100 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "33",
+    "formulation": {
+      "drug": "Ketoconazole",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "60 ml & 100 ml Shampoo"
+    },
+    "type": "Shampoo",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "34",
+    "formulation": {
+      "drug": "Luliconazole",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "10 g, 15 g, 20 g, 30 g & 50 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "35",
+    "formulation": {
+      "drug": "Luliconazole",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "30 ml & 50 ml Lotion"
+    },
+    "type": "Lotion",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "36",
+    "formulation": {
+      "drug": "Metronidazole",
+      "strength": ["0.75%"],
+      "route": "Topical",
+      "pack": "45 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antibiotic / Antiprotozoal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "37",
+    "formulation": {
+      "drug": "Miconazole",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "5 g, 15 g & 30 g Cream / Ointment"
+    },
+    "type": "Cream / Ointment",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "38",
+    "formulation": {
+      "drug": "Minoxidil",
+      "strength": ["5%"],
+      "route": "Topical",
+      "pack": "60 ml & 100 ml Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Hair Growth Stimulant",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "39",
+    "formulation": {
+      "drug": "Mometasone Furoate",
+      "strength": ["0.1%"],
+      "route": "Topical",
+      "pack": "15 g & 30 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Steroid",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "40",
+    "formulation": {
+      "drug": "Mupirocin",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "5 g, 10 g & 15 g Cream / Ointment"
+    },
+    "type": "Cream / Ointment",
+    "therapeutic_class": "Antibiotic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "41",
+    "formulation": {
+      "drug": "Nadifloxacin",
+      "strength": [],
+      "route": "Topical",
+      "pack": "10 g & 20 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "42",
+    "formulation": {
+      "drug": "Permethrin",
+      "strength": ["5%"],
+      "route": "Topical",
+      "pack": "50 ml & 100 ml Lotion"
+    },
+    "type": "Lotion",
+    "therapeutic_class": "Antiparasitic (Scabies / Lice)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "43",
+    "formulation": {
+      "drug": "Pimecrolimus",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "15 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Immunomodulator (Dermatitis)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "44",
+    "formulation": {
+      "drug": "Povidone Iodine",
+      "strength": ["5%", "10%"],
+      "route": "Topical",
+      "pack": "15 g, 20 g, 50 g, 100 g & 250 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antiseptic",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "45",
+    "formulation": {
+      "drug": "Sertaconazole Nitrate",
+      "strength": ["2%"],
+      "route": "Topical",
+      "pack": "15 g & 20 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "46",
+    "formulation": {
+      "drug": "Silver Sulfadiazine",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "15 g, 25 g, 50 g, 100 g & 250 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Burn Treatment / Antibacterial",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "47",
+    "formulation": {
+      "drug": "Tacrolimus",
+      "strength": ["0.03%", "1%"],
+      "route": "Topical",
+      "pack": "5 g & 15 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Immunomodulator (Dermatitis)",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "48",
+    "formulation": {
+      "drug": "Terbinafine",
+      "strength": ["1%"],
+      "route": "Topical",
+      "pack": "15 g, 30 g & 100 g Cream"
+    },
+    "type": "Cream",
+    "therapeutic_class": "Antifungal",
+    "prod": "external-preparation"
+  },
+  {
+    "sno": "49",
+    "formulation": {
+      "drug": "Vitamin A + D",
+      "strength": [],
+      "route": "Topical",
+      "pack": "30 g, 60 g & 120 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Vitamin Supplement (Dermatological)",
+    "prod": "external-preparation"
+  }
+]

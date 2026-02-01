@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Novirinse",
+    "formulation": {
+      "volume": "100 ml",
+      "notes": "Standardized with the time test"
+    },
+    "type": "Liquid"
+  },
+  {
+    "name": "Novinzyme",
+    "formulation": {
+      "volume": "200 ml",
+      "composition": [
+        "Cinnamon Oil",
+        "Cardamom Oil",
+        "Caraway Oil",
+        "Ginger Extract",
+        "Papain",
+        "Activated Dimethicone Syrup"
+      ],
+      "additional": "Sachet of Multi-digestive Enzymes"
+    },
+    "type": "Syrup + Sachet"
+  },
+  {
+    "name": "NOVIBACT",
+    "formulation": {
+      "drug": "Ceftriaxone Injection IP",
+      "strength": "1 gm",
+      "route": "I.M./I.V."
+    },
+    "type": "Injection"
+  },
+  {
+    "name": "Novitpan-40",
+    "formulation": {
+      "drug": "Pantoprazole for Injection IP",
+      "form": "Lyophilized Powder",
+      "route": "IV"
+    },
+    "type": "Injection"
+  },
+  {
+    "name": "NOVIBACT-SB",
+    "formulation": {
+      "drug": "Ceftriaxone & Sulbactam For Injection IP",
+      "strength": "1.5 gm",
+      "route": "I.M./I.V."
+    },
+    "type": "Injection"
+  },
+  {
+    "name": "NOVA-RG",
+    "formulation": {
+      "pack": "9 Sachets",
+      "composition": [
+        "L-Arginine",
+        "Proanthocyanidin",
+        "Methylcobalamin",
+        "L-Methyl Folate",
+        "Vitamin D3",
+        "Pyridoxal-5-Phosphate",
+        "Magnesium",
+        "Zinc"
+      ]
+    },
+    "type": "Sachets"
+  },
+  {
+    "name": "Klotramic Injection",
+    "formulation": {
+      "drug": "Tranexamic Acid Injection IP",
+      "strength": "500 mg/5ml",
+      "route": "Slow IV",
+      "pack": "5 Ampoules of 5 ml"
+    },
+    "type": "Injection"
+  }
+]

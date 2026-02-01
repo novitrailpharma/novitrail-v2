@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-novitrail-blue: #0B4F8A;
+  --color-novitrail-orange: #F37021;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white text-gray-700 antialiased leading-relaxed;
+}
+
+section {
+  @apply relative py-20;
+}
+
+/* Typography rules
+   - Page titles (h1): font-semibold
+   - Section titles (h2): font-medium
+   - Avoid `font-bold` on headings for a lighter, professional tone
+*/
+
+h1 {
+  @apply text-4xl font-semibold tracking-tight leading-tight text-novitrail-blue;
+}
+
+h2 {
+  @apply text-3xl font-medium tracking-tight leading-tight text-novitrail-blue mb-12;
+}
+
+h3 {
+  @apply text-2xl font-medium tracking-tight leading-tight;
+}
+
+/* Paragraph spacing: add vertical rhythm between consecutive paragraphs */
+p + p {
+  @apply mt-5;
 }

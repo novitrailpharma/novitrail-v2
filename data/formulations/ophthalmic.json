@@ -1,0 +1,555 @@
+[
+  {
+    "sno": "1",
+    "formulation": {
+      "drug": "Acyclovir",
+      "strength": ["5 g"],
+      "route": "Ophthalmic",
+      "pack": "Eye Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antiviral",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "2",
+    "formulation": {
+      "drug": "Azithromycin",
+      "strength": ["1%"],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "3",
+    "formulation": {
+      "drug": "Azithromycin",
+      "strength": ["5 g"],
+      "route": "Ophthalmic",
+      "pack": "Eye Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "4",
+    "formulation": {
+      "drug": "Betamethasone + Neomycin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Steroid + Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "5",
+    "formulation": {
+      "drug": "Betamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "6",
+    "formulation": {
+      "drug": "Bimatoprost",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "3 ml & 4 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "7",
+    "formulation": {
+      "drug": "Bimatoprost + Timolol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma Combination",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "8",
+    "formulation": {
+      "drug": "Brimonidine Tartrate",
+      "strength": ["0.15%", "2%"],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "9",
+    "formulation": {
+      "drug": "Brimonidine Tartrate + Timolol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma Combination",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "10",
+    "formulation": {
+      "drug": "Carmellose Sodium",
+      "strength": ["0.5%", "1%"],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Lubricant",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "11",
+    "formulation": {
+      "drug": "Chloramphenicol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "12",
+    "formulation": {
+      "drug": "Chloramphenicol",
+      "strength": ["1%"],
+      "route": "Ophthalmic",
+      "pack": "3.5 g & 5 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "13",
+    "formulation": {
+      "drug": "Chloramphenicol + Polymyxin B + Dexamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "14",
+    "formulation": {
+      "drug": "Chloramphenicol + Hydrocortisone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "3 g & 10 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "15",
+    "formulation": {
+      "drug": "Ciprofloxacin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "16",
+    "formulation": {
+      "drug": "Cromolyn Sodium",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiallergic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "17",
+    "formulation": {
+      "drug": "Dexamethasone + Chloramphenicol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Steroid + Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "18",
+    "formulation": {
+      "drug": "Dorzolamide + Timolol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma Combination",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "19",
+    "formulation": {
+      "drug": "Dorzolamide",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "20",
+    "formulation": {
+      "drug": "Fluorometholone",
+      "strength": ["0.1%"],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "21",
+    "formulation": {
+      "drug": "Gentamycin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "22",
+    "formulation": {
+      "drug": "Hypromellose",
+      "strength": ["0.3%"],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Lubricant",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "23",
+    "formulation": {
+      "drug": "Ketorolac",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "NSAID (Ophthalmic)",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "24",
+    "formulation": {
+      "drug": "Latanoprost",
+      "strength": ["0.005%"],
+      "route": "Ophthalmic",
+      "pack": "2.5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma (Prostaglandin Analog)",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "25",
+    "formulation": {
+      "drug": "Moxifloxacin + Dexamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "26",
+    "formulation": {
+      "drug": "Moxifloxacin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "27",
+    "formulation": {
+      "drug": "Naphazoline",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "15 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Decongestant",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "28",
+    "formulation": {
+      "drug": "Neomycin + Dexamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "29",
+    "formulation": {
+      "drug": "Nepafenac",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "NSAID (Ophthalmic)",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "30",
+    "formulation": {
+      "drug": "Ofloxacin + Dexamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "31",
+    "formulation": {
+      "drug": "Olopatadine",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiallergic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "32",
+    "formulation": {
+      "drug": "Polymyxin B + Bacitracin Zinc + Neomycin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic Combination",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "33",
+    "formulation": {
+      "drug": "Prednisolone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "34",
+    "formulation": {
+      "drug": "Proparacaine",
+      "strength": ["0.5%"],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Local Anesthetic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "35",
+    "formulation": {
+      "drug": "Sodium Carboxymethyl Cellulose + Dextrose",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Lubricant",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "36",
+    "formulation": {
+      "drug": "Sodium Hyaluronate",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Lubricant",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "37",
+    "formulation": {
+      "drug": "Tetracycline",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "38",
+    "formulation": {
+      "drug": "Timolol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma (Beta-blocker)",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "39",
+    "formulation": {
+      "drug": "Tobramycin + Dexamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "40",
+    "formulation": {
+      "drug": "Tobramycin + Dexamethasone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "41",
+    "formulation": {
+      "drug": "Tobramycin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 g Ointment"
+    },
+    "type": "Ointment",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "42",
+    "formulation": {
+      "drug": "Tobramycin",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "43",
+    "formulation": {
+      "drug": "Tobramycin + Fluorometholone",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antibiotic + Steroid",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "44",
+    "formulation": {
+      "drug": "Travoprost + Timolol",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "2.5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma Combination",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "45",
+    "formulation": {
+      "drug": "Travoprost",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "2.5 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Antiglaucoma (Prostaglandin Analog)",
+    "prod": "ophthalmic"
+  },
+  {
+    "sno": "46",
+    "formulation": {
+      "drug": "Tropicamide",
+      "strength": [],
+      "route": "Ophthalmic",
+      "pack": "5 ml & 10 ml Eye Drop"
+    },
+    "type": "Eye Drop",
+    "therapeutic_class": "Mydriatic (Pupil Dilator)",
+    "prod": "ophthalmic"
+  }
+]
+  

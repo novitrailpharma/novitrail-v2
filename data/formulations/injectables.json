@@ -1,0 +1,1154 @@
+[
+  {
+    "sno": "1",
+    "formulation": {
+      "drug": "Acyclovir",
+      "strength": ["250 mg", "500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antiviral",
+    "prod": "injectables"
+  },
+  {
+    "sno": "2",
+    "formulation": {
+      "drug": "Amikacin",
+      "strength": ["250 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Aminoglycoside)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "3",
+    "formulation": {
+      "drug": "Anidulafungin",
+      "strength": ["100 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antifungal",
+    "prod": "injectables"
+  },
+  {
+    "sno": "4",
+    "formulation": {
+      "drug": "Atosiban",
+      "strength": ["37.5 mg/5 ml"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Tocolytic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "5",
+    "formulation": {
+      "drug": "Atracurium",
+      "strength": ["10 mg/ml"],
+      "route": "Injection",
+      "pack": "2.5 ml & 5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Neuromuscular Blocker",
+    "prod": "injectables"
+  },
+  {
+    "sno": "6",
+    "formulation": {
+      "drug": "Azithromycin",
+      "strength": ["500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Macrolide)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "7",
+    "formulation": {
+      "drug": "Bupivacaine",
+      "strength": ["5 mg/ml"],
+      "route": "Injection",
+      "pack": "10 ml & 20 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Local Anesthetic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "8",
+    "formulation": {
+      "drug": "Bupivacaine Heavy + Dextrose",
+      "strength": ["5 mg/ml + 0.9%"],
+      "route": "Injection",
+      "pack": "4 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Local Anesthetic (Spinal)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "9",
+    "formulation": {
+      "drug": "Caspofungin",
+      "strength": ["50 mg", "70 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antifungal",
+    "prod": "injectables"
+  },
+  {
+    "sno": "10",
+    "formulation": {
+      "drug": "Ceftriaxone + Lidocaine",
+      "strength": ["100 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic + Local Anesthetic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "11",
+    "formulation": {
+      "drug": "Cisatracurium",
+      "strength": ["2 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml & 10 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Neuromuscular Blocker",
+    "prod": "injectables"
+  },
+  {
+    "sno": "12",
+    "formulation": {
+      "drug": "Citicoline",
+      "strength": ["500 mg/2 ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Nootropic / Neuroprotective",
+    "prod": "injectables"
+  },
+  {
+    "sno": "13",
+    "formulation": {
+      "drug": "Clarithromycin",
+      "strength": ["500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Macrolide)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "14",
+    "formulation": {
+      "drug": "Clindamycin",
+      "strength": ["150 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml & 4 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Lincosamide)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "15",
+    "formulation": {
+      "drug": "Colistimethate (Colistin)",
+      "strength": ["1 MIU", "2 MIU", "3 MIU", "4.5 MIU"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Polymyxin)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "16",
+    "formulation": {
+      "drug": "Daptomycin",
+      "strength": ["500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Lipopeptide)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "17",
+    "formulation": {
+      "drug": "Dexamethasone",
+      "strength": ["4 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Corticosteroid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "18",
+    "formulation": {
+      "drug": "Dexmedetomidine",
+      "strength": ["100 mcg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Sedative",
+    "prod": "injectables"
+  },
+  {
+    "sno": "19",
+    "formulation": {
+      "drug": "Diclofenac Sodium",
+      "strength": ["25 mg/ml"],
+      "route": "Injection",
+      "pack": "3 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "NSAID",
+    "prod": "injectables"
+  },
+  {
+    "sno": "20",
+    "formulation": {
+      "drug": "Dobutamine",
+      "strength": ["50 mg/ml", "12.5 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml & 20 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Cardiac Stimulant",
+    "prod": "injectables"
+  },
+  {
+    "sno": "21",
+    "formulation": {
+      "drug": "Dopamine",
+      "strength": ["40 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Cardiac Stimulant",
+    "prod": "injectables"
+  },
+  {
+    "sno": "22",
+    "formulation": {
+      "drug": "Enoxaparin",
+      "strength": ["20 mg", "40 mg", "60 mg"],
+      "route": "Injection",
+      "pack": "Prefilled Syringe"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anticoagulant (LMWH)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "23",
+    "formulation": {
+      "drug": "Ertapenem",
+      "strength": ["1000 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Carbapenem)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "24",
+    "formulation": {
+      "drug": "Esomeprazole",
+      "strength": ["40 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Proton Pump Inhibitor",
+    "prod": "injectables"
+  },
+  {
+    "sno": "25",
+    "formulation": {
+      "drug": "Fentanyl",
+      "strength": ["50 mcg/ml"],
+      "route": "Injection",
+      "pack": "2 ml & 10 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Opioid Analgesic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "26",
+    "formulation": {
+      "drug": "Fluphenazine Decanoate",
+      "strength": ["25 mg/ml"],
+      "route": "Injection",
+      "pack": "1 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antipsychotic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "27",
+    "formulation": {
+      "drug": "Fulvestrant",
+      "strength": ["250 mg/5 ml"],
+      "route": "Injection",
+      "pack": "Prefilled Syringe"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anticancer (Estrogen Receptor Antagonist)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "28",
+    "formulation": {
+      "drug": "Furosemide",
+      "strength": ["10 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Diuretic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "29",
+    "formulation": {
+      "drug": "Ganciclovir",
+      "strength": ["500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antiviral",
+    "prod": "injectables"
+  },
+  {
+    "sno": "30",
+    "formulation": {
+      "drug": "Granisetron",
+      "strength": ["1 mg/ml"],
+      "route": "Injection",
+      "pack": "1 ml & 3 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antiemetic (5-HT3 Antagonist)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "31",
+    "formulation": {
+      "drug": "Haloperidol Decanoate",
+      "strength": ["100 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antipsychotic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "32",
+    "formulation": {
+      "drug": "Heparin",
+      "strength": ["5000 IU/5 ml", "25000 IU/5 ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anticoagulant",
+    "prod": "injectables"
+  },
+  {
+    "sno": "33",
+    "formulation": {
+      "drug": "Hydrocortisone",
+      "strength": ["100 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Corticosteroid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "34",
+    "formulation": {
+      "drug": "Hydroxyprogesterone Caproate",
+      "strength": ["250 mg/ml"],
+      "route": "Injection",
+      "pack": "1 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Hormone (Progestin)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "35",
+    "formulation": {
+      "drug": "Imipenem + Cilastatin",
+      "strength": ["500 mg + 500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Carbapenem Combination)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "36",
+    "formulation": {
+      "drug": "Indomethacin",
+      "strength": ["1 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "NSAID",
+    "prod": "injectables"
+  },
+  {
+    "sno": "37",
+    "formulation": {
+      "drug": "Iron Sucrose",
+      "strength": ["20 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Iron Supplement",
+    "prod": "injectables"
+  },
+  {
+    "sno": "38",
+    "formulation": {
+      "drug": "Ketamine",
+      "strength": ["50 mg/ml"],
+      "route": "Injection",
+      "pack": "10 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anesthetic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "39",
+    "formulation": {
+      "drug": "Ketoprofen",
+      "strength": ["50 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "NSAID",
+    "prod": "injectables"
+  },
+  {
+    "sno": "40",
+    "formulation": {
+      "drug": "Ketorolac",
+      "strength": ["30 mg/ml"],
+      "route": "Injection",
+      "pack": "1 ml & 2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "NSAID",
+    "prod": "injectables"
+  },
+  {
+    "sno": "41",
+    "formulation": {
+      "drug": "Labetalol",
+      "strength": ["5 mg/ml"],
+      "route": "Injection",
+      "pack": "20 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antihypertensive (Beta-blocker)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "42",
+    "formulation": {
+      "drug": "Lansoprazole",
+      "strength": ["30 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Proton Pump Inhibitor",
+    "prod": "injectables"
+  },
+  {
+    "sno": "43",
+    "formulation": {
+      "drug": "Levetiracetam",
+      "strength": ["100 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anticonvulsant",
+    "prod": "injectables"
+  },
+  {
+    "sno": "44",
+    "formulation": {
+      "drug": "Lidocaine",
+      "strength": ["10 mg/ml", "20 mg/ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Local Anesthetic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "45",
+    "formulation": {
+      "drug": "L-Ornithine L-Aspartate",
+      "strength": ["5 g/10 ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Hepatic Detoxifier",
+    "prod": "injectables"
+  },
+  {
+    "sno": "46",
+    "formulation": {
+      "drug": "Medroxyprogesterone",
+      "strength": ["150 mg/ml"],
+      "route": "Injection",
+      "pack": "1 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Hormone (Progestin)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "47",
+    "formulation": {
+      "drug": "Meropenem",
+      "strength": ["500 mg", "1000 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Carbapenem)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "48",
+    "formulation": {
+      "drug": "Metamizole (Dipyrone)",
+      "strength": ["500 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Analgesic / Antipyretic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "49",
+    "formulation": {
+      "drug": "Methylcobalamin",
+      "strength": ["500 mcg/1 ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Vitamin B12 Supplement",
+    "prod": "injectables"
+  },
+  {
+    "sno": "50",
+    "formulation": {
+      "drug": "Methylprednisolone Sodium Succinate",
+      "strength": ["40 mg", "500 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Corticosteroid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "51",
+    "formulation": {
+      "drug": "Methylprednisolone Acetate",
+      "strength": ["40 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Corticosteroid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "52",
+    "formulation": {
+      "drug": "Midazolam",
+      "strength": ["1 mg/ml", "5 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml & 10 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Sedative / Anxiolytic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "53",
+    "formulation": {
+      "drug": "Nandrolone Decanoate",
+      "strength": ["25 mg/ml", "50 mg/ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anabolic Steroid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "54",
+    "formulation": {
+      "drug": "Nitroglycerine",
+      "strength": ["5 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml & 10 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antianginal",
+    "prod": "injectables"
+  },
+  {
+    "sno": "55",
+    "formulation": {
+      "drug": "Norepinephrine",
+      "strength": ["1 mg/ml"],
+      "route": "Injection",
+      "pack": "4 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Vasopressor",
+    "prod": "injectables"
+  },
+  {
+    "sno": "56",
+    "formulation": {
+      "drug": "Octreotide",
+      "strength": ["50 mg", "100 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Hormone Analog (Somatostatin)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "57",
+    "formulation": {
+      "drug": "Omeprazole",
+      "strength": ["40 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Proton Pump Inhibitor",
+    "prod": "injectables"
+  },
+  {
+    "sno": "58",
+    "formulation": {
+      "drug": "Ondansetron",
+      "strength": ["2 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml & 4 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antiemetic (5-HT3 Antagonist)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "59",
+    "formulation": {
+      "drug": "Pamidronate Disodium",
+      "strength": ["90 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Bisphosphonate",
+    "prod": "injectables"
+  },
+  {
+    "sno": "60",
+    "formulation": {
+      "drug": "Pantoprazole",
+      "strength": ["40 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Proton Pump Inhibitor",
+    "prod": "injectables"
+  },
+  {
+    "sno": "61",
+    "formulation": {
+      "drug": "Paracetamol",
+      "strength": ["150 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Analgesic / Antipyretic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "62",
+    "formulation": {
+      "drug": "Phenylephrine Hydrochloride",
+      "strength": ["10 mg/1 ml"],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Vasopressor / Decongestant",
+    "prod": "injectables"
+  },
+  {
+    "sno": "63",
+    "formulation": {
+      "drug": "Phenytoin",
+      "strength": ["100 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anticonvulsant",
+    "prod": "injectables"
+  },
+  {
+    "sno": "64",
+    "formulation": {
+      "drug": "Piperacillin + Tazobactam",
+      "strength": ["4.5 g"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic Combination",
+    "prod": "injectables"
+  },
+  {
+    "sno": "65",
+    "formulation": {
+      "drug": "Polymyxin B",
+      "strength": ["0.5 MIU"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Polymyxin)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "66",
+    "formulation": {
+      "drug": "Propofol",
+      "strength": ["10 mg/ml"],
+      "route": "Injection",
+      "pack": "10 ml, 20 ml & 50 ml Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Anesthetic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "67",
+    "formulation": {
+      "drug": "Rabeprazole",
+      "strength": ["20 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Proton Pump Inhibitor",
+    "prod": "injectables"
+  },
+  {
+    "sno": "68",
+    "formulation": {
+      "drug": "Ranitidine",
+      "strength": ["25 mg/ml"],
+      "route": "Injection",
+      "pack": "2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "H2 Blocker",
+    "prod": "injectables"
+  },
+  {
+    "sno": "69",
+    "formulation": {
+      "drug": "Rocuronium",
+      "strength": ["10 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml & 10 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Neuromuscular Blocker",
+    "prod": "injectables"
+  },
+  {
+    "sno": "70",
+    "formulation": {
+      "drug": "Sodium Hyaluronate",
+      "strength": ["0.8%", "1%", "1.5%", "2%"],
+      "route": "Injection",
+      "pack": "2 ml, 3 ml, 4 ml & 6 ml Prefilled Syringe"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Viscosupplement",
+    "prod": "injectables"
+  },
+  {
+    "sno": "71",
+    "formulation": {
+      "drug": "Sodium Hyaluronate",
+      "strength": ["1%", "1.2%", "1.4%", "1.6%", "1.8%"],
+      "route": "Injection",
+      "pack": "1 ml Prefilled Syringe"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Viscosupplement",
+    "prod": "injectables"
+  },
+  {
+    "sno": "72",
+    "formulation": {
+      "drug": "Teicoplanin",
+      "strength": ["200 mg", "400 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Glycopeptide)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "73",
+    "formulation": {
+      "drug": "Tigecycline",
+      "strength": ["50 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Glycylcycline)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "74",
+    "formulation": {
+      "drug": "Tramadol",
+      "strength": ["50 mg/ml"],
+      "route": "Injection",
+      "pack": "1 ml & 2 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Analgesic (Opioid)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "75",
+    "formulation": {
+      "drug": "Tranexamic Acid",
+      "strength": ["100 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antifibrinolytic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "76",
+    "formulation": {
+      "drug": "Vancomycin",
+      "strength": ["500 mg", "1000 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antibiotic (Glycopeptide)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "77",
+    "formulation": {
+      "drug": "Vecuronium",
+      "strength": ["4 mg", "10 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Neuromuscular Blocker",
+    "prod": "injectables"
+  },
+  {
+    "sno": "78",
+    "formulation": {
+      "drug": "Vitamin B Complex",
+      "strength": [],
+      "route": "Injection",
+      "pack": "Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "injectables"
+  },
+  {
+    "sno": "79",
+    "formulation": {
+      "drug": "Voriconazole",
+      "strength": ["200 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antifungal",
+    "prod": "injectables"
+  },
+  {
+    "sno": "80",
+    "formulation": {
+      "drug": "Zoledronic Acid",
+      "strength": ["4 mg"],
+      "route": "Injection",
+      "pack": "Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Bisphosphonate",
+    "prod": "injectables"
+  },
+  {
+    "sno": "81",
+    "formulation": {
+      "drug": "Zuclopenthixol Decanoate",
+      "strength": ["200 mg/ml"],
+      "route": "Injection",
+      "pack": "5 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Antipsychotic (Depot)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "82",
+    "formulation": {
+      "drug": "Aminoacid",
+      "strength": ["10%"],
+      "route": "Infusion",
+      "pack": "500 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Nutritional Supplement",
+    "prod": "injectables"
+  },
+  {
+    "sno": "83",
+    "formulation": {
+      "drug": "Paracetamol",
+      "strength": ["10 mg/ml"],
+      "route": "Infusion",
+      "pack": "100 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Analgesic / Antipyretic",
+    "prod": "injectables"
+  },
+  {
+    "sno": "84",
+    "formulation": {
+      "drug": "Ciprofloxacin",
+      "strength": ["2 mg/ml"],
+      "route": "Infusion",
+      "pack": "100 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antibiotic (Fluoroquinolone)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "85",
+    "formulation": {
+      "drug": "Metronidazole",
+      "strength": ["5 mg/ml"],
+      "route": "Infusion",
+      "pack": "100 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antibiotic / Antiprotozoal",
+    "prod": "injectables"
+  },
+  {
+    "sno": "86",
+    "formulation": {
+      "drug": "Fluconazole",
+      "strength": ["2 mg/ml"],
+      "route": "Infusion",
+      "pack": "100 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antifungal",
+    "prod": "injectables"
+  },
+  {
+    "sno": "87",
+    "formulation": {
+      "drug": "Levofloxacin",
+      "strength": ["5 mg/ml"],
+      "route": "Infusion",
+      "pack": "100 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antibiotic (Fluoroquinolone)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "88",
+    "formulation": {
+      "drug": "Linezolid",
+      "strength": ["2 mg/ml"],
+      "route": "Infusion",
+      "pack": "300 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antibiotic (Oxazolidinone)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "89",
+    "formulation": {
+      "drug": "Moxifloxacin",
+      "strength": ["1.6 mg/ml"],
+      "route": "Infusion",
+      "pack": "250 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antibiotic (Fluoroquinolone)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "90",
+    "formulation": {
+      "drug": "Ofloxacin",
+      "strength": ["2 mg/ml"],
+      "route": "Infusion",
+      "pack": "100 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "Antibiotic (Fluoroquinolone)",
+    "prod": "injectables"
+  },
+  {
+    "sno": "91",
+    "formulation": {
+      "drug": "Normal Saline",
+      "strength": ["0.9%"],
+      "route": "Infusion",
+      "pack": "100 ml, 250 ml, 500 ml & 1000 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "IV Fluid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "92",
+    "formulation": {
+      "drug": "Ringer Lactate",
+      "strength": [],
+      "route": "Infusion",
+      "pack": "100 ml, 250 ml, 500 ml & 1000 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "IV Fluid",
+    "prod": "injectables"
+  },
+  {
+    "sno": "93",
+    "formulation": {
+      "drug": "Dextrose",
+      "strength": ["5%", "10%"],
+      "route": "Infusion",
+      "pack": "100 ml, 250 ml, 500 ml & 1000 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "IV Fluid / Energy Source",
+    "prod": "injectables"
+  },
+  {
+    "sno": "94",
+    "formulation": {
+      "drug": "Dextrose + Normal Saline",
+      "strength": [],
+      "route": "Infusion",
+      "pack": "100 ml, 250 ml, 500 ml & 1000 ml Bottle"
+    },
+    "type": "Infusion",
+    "therapeutic_class": "IV Fluid Combination",
+    "prod": "injectables"
+  },
+  {
+    "sno": "95",
+    "formulation": {
+      "drug": "Water for Injection",
+      "strength": [],
+      "route": "Injection",
+      "pack": "2 ml, 5 ml & 10 ml Plastic Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Diluent",
+    "prod": "injectables"
+  },
+  {
+    "sno": "96",
+    "formulation": {
+      "drug": "Lidocaine (Preservative Free)",
+      "strength": ["20 mg/ml"],
+      "route": "Injection",
+      "pack": "10 ml & 20 ml Ampoule"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Local Anesthetic",
+    "prod": "injectables"
+  }
+]

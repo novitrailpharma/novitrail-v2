@@ -1,0 +1,230 @@
+[
+  {
+    "sno": "1",
+    "formulation": {
+      "drug": "Darunavir",
+      "strength": ["800 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "2",
+    "formulation": {
+      "drug": "Declatasvir",
+      "strength": ["60 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "3",
+    "formulation": {
+      "drug": "Entecavir",
+      "strength": ["0.5 mg", "1 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "4",
+    "formulation": {
+      "drug": "Molnupiravir",
+      "strength": ["200 mg", "400 mg"],
+      "route": "Oral",
+      "pack": "Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Antiviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "5",
+    "formulation": {
+      "drug": "Raltegravir",
+      "strength": ["400 mg"],
+      "route": "Oral",
+      "pack": "Sachet"
+    },
+    "type": "Sachet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "6",
+    "formulation": {
+      "drug": "Raltegravir",
+      "strength": ["400 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "7",
+    "formulation": {
+      "drug": "Ritonavir",
+      "strength": ["100 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "8",
+    "formulation": {
+      "drug": "Sofosbuvir + Velpatasvir",
+      "strength": ["400 mg + 100 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "9",
+    "formulation": {
+      "drug": "Sofosbuvir",
+      "strength": ["400 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "10",
+    "formulation": {
+      "drug": "Tenofovir Disoproxil Fumarate + Emtricitabine",
+      "strength": ["300 mg + 200 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "11",
+    "formulation": {
+      "drug": "Tenofovir Disoproxil Fumarate",
+      "strength": ["300 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Antiretroviral",
+    "prod": "speciality"
+  },
+  {
+    "sno": "12",
+    "formulation": {
+      "drug": "Progesterone",
+      "strength": ["100 mg", "200 mg"],
+      "route": "Oral",
+      "pack": "Soft Gelatin Capsule"
+    },
+    "type": "Capsule",
+    "therapeutic_class": "Hormonal",
+    "prod": "speciality"
+  },
+  {
+    "sno": "13",
+    "formulation": {
+      "drug": "Allylestrenol",
+      "strength": ["5 mg"],
+      "route": "Oral",
+      "pack": "Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Hormonal",
+    "prod": "speciality"
+  },
+  {
+    "sno": "14",
+    "formulation": {
+      "drug": "Mifepristone + Misoprostol",
+      "strength": ["200 mg + 200 mcg"],
+      "route": "Oral",
+      "pack": "Combipack Tablet"
+    },
+    "type": "Tablet",
+    "therapeutic_class": "Hormonal",
+    "prod": "speciality"
+  },
+  {
+    "sno": "31",
+    "formulation": {
+      "drug": "Medroxyprogesterone Acetate",
+      "strength": ["150 mg/1 ml"],
+      "route": "Injection (IM)",
+      "pack": "1 ml Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Hormonal",
+    "prod": "speciality"
+  },
+  {
+    "sno": "32",
+    "formulation": {
+      "drug": "Hydroxyprogesterone Caproate",
+      "strength": ["250 mg/1 ml"],
+      "route": "Injection (IM)",
+      "pack": "1 ml Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Hormonal",
+    "prod": "speciality"
+  },
+  {
+    "sno": "33",
+    "formulation": {
+      "drug": "Iodixanol",
+      "strength": ["150 mg/ml", "270 mg/ml", "320 mg/ml"],
+      "route": "IV",
+      "pack": "20 ml, 50 ml & 100 ml Glass Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Contrast Media",
+    "prod": "speciality"
+  },
+  {
+    "sno": "34",
+    "formulation": {
+      "drug": "Iohexol",
+      "strength": ["240 mg/ml", "300 mg/ml", "350 mg/ml"],
+      "route": "IV",
+      "pack": "20 ml, 50 ml & 100 ml Glass Vial"
+    },
+    "type": "Injection",
+    "therapeutic_class": "Contrast Media",
+    "prod": "speciality"
+  },
+  {
+    "sno": "42",
+    "formulation": {
+      "drug": "Barium Sulphate",
+      "strength": ["98%", "98.8%"],
+      "route": "Oral/Rectal",
+      "pack": "Powder"
+    },
+    "type": "Powder",
+    "therapeutic_class": "Contrast Media",
+    "prod": "speciality"
+  }
+]

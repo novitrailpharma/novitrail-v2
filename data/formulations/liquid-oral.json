@@ -1,0 +1,530 @@
+[
+  {
+    "sno": "1",
+    "formulation": {
+      "drug": "Acetaminophen + Pseudoephedrine Sulphate + Chlorphenamine Maleate",
+      "strength": ["125 mg + 30 mg + 2 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Analgesic + Decongestant + Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "2",
+    "formulation": {
+      "drug": "Albendazole",
+      "strength": ["200 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Anthelmintic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "3",
+    "formulation": {
+      "drug": "Aluminium Hydroxide + Magnesium Hydroxide + Simethicone + Sodium CMC",
+      "strength": ["830 mg + 180 mg + 50 mg + 100 mg / 10 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antacid + Antiflatulent",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "4",
+    "formulation": {
+      "drug": "Ambroxol Hydrochloride + Salbutamol Sulphate",
+      "strength": ["15 mg + 1 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Mucolytic + Bronchodilator",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "5",
+    "formulation": {
+      "drug": "Amino Acid + Multivitamin",
+      "strength": [],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Nutritional Supplement",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "6",
+    "formulation": {
+      "drug": "Amoxicillin + Potassium Clavulanate",
+      "strength": ["156.25 mg", "228.5 mg", "281.25 mg", "312.5 mg", "457 mg"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Penicillin Combination)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "7",
+    "formulation": {
+      "drug": "Amoxicillin",
+      "strength": ["125 mg", "250 mg"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Penicillin)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "8",
+    "formulation": {
+      "drug": "Ampicillin",
+      "strength": ["125 mg", "250 mg"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Penicillin)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "9",
+    "formulation": {
+      "drug": "Azithromycin",
+      "strength": ["200 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Macrolide)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "10",
+    "formulation": {
+      "drug": "Bromhexine + Tebutalamine Sulphate + Guaifenesin",
+      "strength": ["4 mg + 1.25 mg + 50 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Mucolytic + Bronchodilator + Expectorant",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "11",
+    "formulation": {
+      "drug": "Bromhexine Hydrochloride + Chlophedianol Hydrochloride",
+      "strength": ["1 mg + 7 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Mucolytic + Antitussive",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "12",
+    "formulation": {
+      "drug": "Carbocisteine",
+      "strength": ["100 mg/5 ml", "200 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Mucolytic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "13",
+    "formulation": {
+      "drug": "Carboxymethylcysteine + Dextromethorphan Hydrobromide + Chlorpheniramine Maleate",
+      "strength": ["150 mg + 5 mg + 2.5 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Mucolytic + Antitussive + Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "14",
+    "formulation": {
+      "drug": "Cetirizine",
+      "strength": ["5 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "15",
+    "formulation": {
+      "drug": "Codeine Phosphate + Triprolidine",
+      "strength": ["10 mg + 1.25 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Antitussive + Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "16",
+    "formulation": {
+      "drug": "Codeine Phosphate + Pseudoephedrine Hydrochloride + Chlorphenamine Maleate",
+      "strength": ["10 mg + 30 mg + 2 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Antitussive + Decongestant + Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "17",
+    "formulation": {
+      "drug": "Vitamin A",
+      "strength": ["100,000 IU/ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Vitamin Supplement",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "18",
+    "formulation": {
+      "drug": "Dexketoprofen",
+      "strength": ["25 mg/10 ml"],
+      "route": "Oral",
+      "pack": "Sachet Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "NSAID",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "19",
+    "formulation": {
+      "drug": "Dextromethorphan Hydrobromide + Chlorpheniramine Maleate + Phenylephrine Hydrochloride",
+      "strength": ["10 mg + 2 mg + 5 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Antitussive + Antihistamine + Decongestant",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "20",
+    "formulation": {
+      "drug": "Erythromycin Stearate",
+      "strength": ["125 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Macrolide)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "21",
+    "formulation": {
+      "drug": "Ferrous Ascorbate + Folic Acid",
+      "strength": ["50 mg + 0.75 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Iron + Vitamin Supplement",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "22",
+    "formulation": {
+      "drug": "Ferrous Sulfate",
+      "strength": ["25 mg/ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Iron Supplement",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "23",
+    "formulation": {
+      "drug": "Flucloxacillin",
+      "strength": ["125 mg", "250 mg"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Penicillin)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "24",
+    "formulation": {
+      "drug": "Hydroxyzine Hydrochloride",
+      "strength": ["10 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "25",
+    "formulation": {
+      "drug": "Ibuprofen + Paracetamol",
+      "strength": ["100 mg + 125 mg / 5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "NSAID + Analgesic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "26",
+    "formulation": {
+      "drug": "Ibuprofen",
+      "strength": ["100 mg/5 ml", "200 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "NSAID",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "27",
+    "formulation": {
+      "drug": "Iron (Polymaltosed Iron(III) Hydroxide Complex)",
+      "strength": ["50 mg/ml"],
+      "route": "Oral",
+      "pack": "Drops"
+    },
+    "type": "Drops",
+    "therapeutic_class": "Iron Supplement",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "28",
+    "formulation": {
+      "drug": "Lactulose",
+      "strength": ["3.35 g/5 ml", "5 g/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Laxative",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "29",
+    "formulation": {
+      "drug": "Levetiracetam",
+      "strength": ["100 mg/ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Anticonvulsant",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "30",
+    "formulation": {
+      "drug": "Levocetirizine Hydrochloride",
+      "strength": ["2.5 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Syrup"
+    },
+    "type": "Syrup",
+    "therapeutic_class": "Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "31",
+    "formulation": {
+      "drug": "Levofloxacin",
+      "strength": ["125 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic (Fluoroquinolone)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "32",
+    "formulation": {
+      "drug": "Metoclopramide",
+      "strength": ["5 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Antiemetic / Prokinetic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "33",
+    "formulation": {
+      "drug": "Metronidazole",
+      "strength": ["200 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antibiotic / Antiprotozoal",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "34",
+    "formulation": {
+      "drug": "Nitazoxanide",
+      "strength": ["100 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antiparasitic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "35",
+    "formulation": {
+      "drug": "Ondansetron",
+      "strength": ["2 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Antiemetic (5-HT3 Antagonist)",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "36",
+    "formulation": {
+      "drug": "Paracetamol",
+      "strength": ["100 mg/5 ml", "120 mg/5 ml", "250 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Analgesic / Antipyretic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "37",
+    "formulation": {
+      "drug": "Phenytoin",
+      "strength": ["125 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Anticonvulsant",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "38",
+    "formulation": {
+      "drug": "Povidone Iodine",
+      "strength": ["10 mg/ml"],
+      "route": "Oral",
+      "pack": "Mouthwash"
+    },
+    "type": "Mouthwash",
+    "therapeutic_class": "Antiseptic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "39",
+    "formulation": {
+      "drug": "Povidone Iodine",
+      "strength": ["50 mg/ml", "75 mg/ml", "100 mg/ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Antiseptic",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "40",
+    "formulation": {
+      "drug": "Promethazine",
+      "strength": ["5 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Antihistamine",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "41",
+    "formulation": {
+      "drug": "Racecadotril",
+      "strength": ["10 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antidiarrheal",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "42",
+    "formulation": {
+      "drug": "Salbutamol",
+      "strength": ["2 mg/5 ml"],
+      "route": "Oral",
+      "pack": "Solution"
+    },
+    "type": "Solution",
+    "therapeutic_class": "Bronchodilator",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "43",
+    "formulation": {
+      "drug": "Simethicone + Magaldrate",
+      "strength": ["60 mg + 800 mg / 10 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antacid + Antiflatulent",
+    "prod": "liquid-oral"
+  },
+  {
+    "sno": "44",
+    "formulation": {
+      "drug": "Sucralfate",
+      "strength": ["1 g/5 ml", "1 g/10 ml"],
+      "route": "Oral",
+      "pack": "Suspension"
+    },
+    "type": "Suspension",
+    "therapeutic_class": "Antiulcer Agent",
+    "prod": "liquid-oral"
+  }
+]

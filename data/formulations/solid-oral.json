@@ -1,0 +1,2045 @@
+[
+    {
+        "sno": "1",
+        "formulation": {
+            "drug": "Aceclofenac + Paracetamol",
+            "strength": [
+                "100 mg + 500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Analgesic / Antipyretic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "2",
+        "formulation": {
+            "drug": "Acyclovir",
+            "strength": [
+                "200 mg",
+                "400 mg",
+                "800 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antiviral",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "3",
+        "formulation": {
+            "drug": "Allopurinol",
+            "strength": [
+                "100 mg",
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antigout",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "4",
+        "formulation": {
+            "drug": "Aluminium Hydroxide + Magnesium Trisilicate",
+            "strength": [
+                "120 mg + 250 mg"
+            ],
+            "route": "Oral",
+            "pack": "Chewable Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antacid",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "5",
+        "formulation": {
+            "drug": "Amitriptyline",
+            "strength": [
+                "10 mg",
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidepressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "6",
+        "formulation": {
+            "drug": "Amlodipine + Telmisartan",
+            "strength": [
+                "5 mg + 40 mg",
+                "5 mg + 80 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "7",
+        "formulation": {
+            "drug": "Amlodipine + Valsartan",
+            "strength": [
+                "5 mg + 80 mg",
+                "5 mg + 160 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "8",
+        "formulation": {
+            "drug": "Amlodipine",
+            "strength": [
+                "2.5 mg",
+                "5 mg",
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "9",
+        "formulation": {
+            "drug": "Amoxicillin + Clavulanic Acid",
+            "strength": [
+                "625 mg",
+                "1000 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "10",
+        "formulation": {
+            "drug": "Apixaban",
+            "strength": [
+                "2.5 mg",
+                "5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticoagulant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "11",
+        "formulation": {
+            "drug": "Aspirin + Clopidogrel",
+            "strength": [
+                "75 mg + 75 mg",
+                "150 mg + 75 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antiplatelet",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "12",
+        "formulation": {
+            "drug": "Aspirin",
+            "strength": [
+                "75 mg",
+                "150 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antiplatelet",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "13",
+        "formulation": {
+            "drug": "Atenolol",
+            "strength": [
+                "50 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Beta-blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "14",
+        "formulation": {
+            "drug": "Atorvastatin",
+            "strength": [
+                "10 mg",
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Statin",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "15",
+        "formulation": {
+            "drug": "Azithromycin",
+            "strength": [
+                "250 mg",
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "16",
+        "formulation": {
+            "drug": "Baclofen",
+            "strength": [
+                "25 mg",
+                "50 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Muscle Relaxant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "17",
+        "formulation": {
+            "drug": "Betahistine",
+            "strength": [
+                "16 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antivertigo",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "18",
+        "formulation": {
+            "drug": "Bisacodyl",
+            "strength": [
+                "5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Laxative",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "19",
+        "formulation": {
+            "drug": "Bisoprolol",
+            "strength": [
+                "2.5 mg",
+                "5 mg",
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Beta-blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "20",
+        "formulation": {
+            "drug": "Calcium Carbonate + Vitamin D",
+            "strength": [
+                "1250 mg + 400 IU"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Supplement",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "21",
+        "formulation": {
+            "drug": "Calcium Citrate + Magnesium + Zinc + Vitamin D3",
+            "strength": [
+                "1000 mg + 100 mg + 4 mg + 200 IU"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Supplement",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "22",
+        "formulation": {
+            "drug": "Calcium Dobesilate",
+            "strength": [
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Vascular Protectant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "23",
+        "formulation": {
+            "drug": "Captopril",
+            "strength": [
+                "12.5 mg",
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "ACE Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "24",
+        "formulation": {
+            "drug": "Carbamazepine",
+            "strength": [
+                "200 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "25",
+        "formulation": {
+            "drug": "Carbidopa + Levodopa",
+            "strength": [
+                "10 mg + 100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antiparkinson",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "26",
+        "formulation": {
+            "drug": "Carvedilol",
+            "strength": [
+                "3.125 mg",
+                "6.25 mg",
+                "12.5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Beta-blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "27",
+        "formulation": {
+            "drug": "Cefixime",
+            "strength": [
+                "400 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "28",
+        "formulation": {
+            "drug": "Cefuroxime",
+            "strength": [
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "29",
+        "formulation": {
+            "drug": "Celecoxib",
+            "strength": [
+                "100 mg",
+                "200 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "30",
+        "formulation": {
+            "drug": "Cholecalciferol",
+            "strength": [
+                "60000 IU"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Vitamin D Supplement",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "31",
+        "formulation": {
+            "drug": "Cimetidine",
+            "strength": [
+                "200 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "H2 Blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "32",
+        "formulation": {
+            "drug": "Ciprofloxacin",
+            "strength": [
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "33",
+        "formulation": {
+            "drug": "Citicoline",
+            "strength": [
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Nootropic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "34",
+        "formulation": {
+            "drug": "Clarithromycin",
+            "strength": [
+                "250 mg",
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "35",
+        "formulation": {
+            "drug": "Clindamycin",
+            "strength": [
+                "150 mg",
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "36",
+        "formulation": {
+            "drug": "Clomiphene Citrate",
+            "strength": [
+                "25 mg",
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Fertility Agent",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "37",
+        "formulation": {
+            "drug": "Clonazepam",
+            "strength": [
+                "1 mg",
+                "2 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant / Anxiolytic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "38",
+        "formulation": {
+            "drug": "Clopidogrel",
+            "strength": [
+                "75 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antiplatelet",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "39",
+        "formulation": {
+            "drug": "Clotrimazole",
+            "strength": [
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Pessaries"
+        },
+        "type": "Pessaries",
+        "therapeutic_class": "Antifungal",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "40",
+        "formulation": {
+            "drug": "Co-trimoxazole",
+            "strength": [
+                "480 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "41",
+        "formulation": {
+            "drug": "Cyclosporin",
+            "strength": [
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Immunosuppressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "42",
+        "formulation": {
+            "drug": "Dapagliflozin + Metformin",
+            "strength": [
+                "5 mg + 500 mg",
+                "5 mg + 1000 mg",
+                "10 mg + 500 mg",
+                "10 mg + 1000 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidiabetic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "43",
+        "formulation": {
+            "drug": "Dapagliflozin",
+            "strength": [
+                "5 mg",
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidiabetic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "44",
+        "formulation": {
+            "drug": "Dapoxetine",
+            "strength": [
+                "30 mg",
+                "60 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidepressant / Premature Ejaculation",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "45",
+        "formulation": {
+            "drug": "Deferasirox",
+            "strength": [
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Iron Chelator",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "46",
+        "formulation": {
+            "drug": "Deflazacort",
+            "strength": [
+                "6 mg",
+                "30 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Corticosteroid",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "47",
+        "formulation": {
+            "drug": "Desloratadine",
+            "strength": [
+                "5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihistamine",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "48",
+        "formulation": {
+            "drug": "Dexamethasone",
+            "strength": [
+                "0.5 mg",
+                "2 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Corticosteroid",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "49",
+        "formulation": {
+            "drug": "Diazepam",
+            "strength": [
+                "5 mg",
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anxiolytic / Sedative",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "50",
+        "formulation": {
+            "drug": "Diclofenac Sodium",
+            "strength": [
+                "50 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "51",
+        "formulation": {
+            "drug": "Dicyclomine HCL",
+            "strength": [
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antispasmodic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "52",
+        "formulation": {
+            "drug": "Diphenhydramine",
+            "strength": [
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Antihistamine",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "53",
+        "formulation": {
+            "drug": "Divalproex Sodium",
+            "strength": [
+                "250 mg",
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "54",
+        "formulation": {
+            "drug": "Doxycycline",
+            "strength": [
+                "100 mg",
+                "200 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "55",
+        "formulation": {
+            "drug": "Duloxetine",
+            "strength": [
+                "30 mg",
+                "60 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Antidepressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "56",
+        "formulation": {
+            "drug": "Erythromycin",
+            "strength": [
+                "250 mg",
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "57",
+        "formulation": {
+            "drug": "Escitalopram",
+            "strength": [
+                "5 mg",
+                "10 mg",
+                "15 mg",
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidepressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "58",
+        "formulation": {
+            "drug": "Esomeprazole",
+            "strength": [
+                "20 mg",
+                "40 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet / Capsule"
+        },
+        "type": "Tablet / Capsule",
+        "therapeutic_class": "Proton Pump Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "59",
+        "formulation": {
+            "drug": "Etoricoxib",
+            "strength": [
+                "60 mg",
+                "90 mg",
+                "120 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "60",
+        "formulation": {
+            "drug": "Everolimus",
+            "strength": [
+                "0.5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Immunosuppressant / Anticancer",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "61",
+        "formulation": {
+            "drug": "Febuxostat",
+            "strength": [
+                "40 mg",
+                "80 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antigout",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "62",
+        "formulation": {
+            "drug": "Fexofenadine",
+            "strength": [
+                "120 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihistamine",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "63",
+        "formulation": {
+            "drug": "Finasteride",
+            "strength": [
+                "5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "5-Alpha Reductase Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "64",
+        "formulation": {
+            "drug": "Fenofibrate",
+            "strength": [
+                "160 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Lipid-lowering Agent",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "65",
+        "formulation": {
+            "drug": "Fluconazole",
+            "strength": [
+                "50 mg",
+                "150 mg",
+                "200 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antifungal",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "66",
+        "formulation": {
+            "drug": "Flunarizine",
+            "strength": [
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Calcium Channel Blocker (Migraine prophylaxis)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "67",
+        "formulation": {
+            "drug": "Fluoxetine",
+            "strength": [
+                "10 mg",
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Antidepressant (SSRI)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "68",
+        "formulation": {
+            "drug": "Furosemide",
+            "strength": [
+                "40 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Diuretic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "69",
+        "formulation": {
+            "drug": "Gabapentin",
+            "strength": [
+                "100 mg",
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant / Neuropathic Pain",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "70",
+        "formulation": {
+            "drug": "Hydralazine",
+            "strength": [
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive (Vasodilator)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "71",
+        "formulation": {
+            "drug": "Hydrocortisone",
+            "strength": [
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Corticosteroid",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "72",
+        "formulation": {
+            "drug": "Hyoscine Butyl Bromide",
+            "strength": [
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antispasmodic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "73",
+        "formulation": {
+            "drug": "Ibandronate",
+            "strength": [
+                "150 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Bisphosphonate",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "74",
+        "formulation": {
+            "drug": "Ibuprofen",
+            "strength": [
+                "200 mg",
+                "400 mg",
+                "600 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "75",
+        "formulation": {
+            "drug": "Indomethacin",
+            "strength": [
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "76",
+        "formulation": {
+            "drug": "Irbesartan",
+            "strength": [
+                "150 mg",
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive (ARB)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "77",
+        "formulation": {
+            "drug": "Isosorbide Dinitrate",
+            "strength": [
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antianginal",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "78",
+        "formulation": {
+            "drug": "Itraconazole",
+            "strength": [
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Antifungal",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "79",
+        "formulation": {
+            "drug": "Labetalol",
+            "strength": [
+                "200 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Beta-blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "80",
+        "formulation": {
+            "drug": "Lamotrigine",
+            "strength": [
+                "25 mg",
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "81",
+        "formulation": {
+            "drug": "Levetiracetam",
+            "strength": [
+                "250 mg",
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "82",
+        "formulation": {
+            "drug": "Levocetirizine + Montelukast",
+            "strength": [
+                "5 mg + 10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihistamine + Leukotriene Antagonist",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "83",
+        "formulation": {
+            "drug": "Levofloxacin",
+            "strength": [
+                "250 mg",
+                "500 mg",
+                "750 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "84",
+        "formulation": {
+            "drug": "Levothyroxine",
+            "strength": [
+                "50 mcg",
+                "100 mcg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Thyroid Hormone",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "85",
+        "formulation": {
+            "drug": "Linezolid",
+            "strength": [
+                "600 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "86",
+        "formulation": {
+            "drug": "Loperamide",
+            "strength": [
+                "2 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidiarrheal",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "87",
+        "formulation": {
+            "drug": "Loratadine",
+            "strength": [
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihistamine",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "88",
+        "formulation": {
+            "drug": "Lorazepam",
+            "strength": [
+                "1 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anxiolytic / Sedative",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "89",
+        "formulation": {
+            "drug": "Lornoxicam",
+            "strength": [
+                "8 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "90",
+        "formulation": {
+            "drug": "Losartan",
+            "strength": [
+                "25 mg",
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive (ARB)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "91",
+        "formulation": {
+            "drug": "Meloxicam",
+            "strength": [
+                "7.5 mg",
+                "15 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "92",
+        "formulation": {
+            "drug": "Meprobamate",
+            "strength": [
+                "400 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anxiolytic / Sedative",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "93",
+        "formulation": {
+            "drug": "Metformin + Sitagliptin",
+            "strength": [
+                "500 mg + 50 mg",
+                "500 mg + 100 mg",
+                "1000 mg + 50 mg",
+                "1000 mg + 100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidiabetic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "94",
+        "formulation": {
+            "drug": "Methyldopa",
+            "strength": [
+                "250 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "95",
+        "formulation": {
+            "drug": "Methylprednisolone",
+            "strength": [
+                "4 mg",
+                "8 mg",
+                "16 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Corticosteroid",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "96",
+        "formulation": {
+            "drug": "Metoprolol",
+            "strength": [
+                "25 mg",
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Beta-blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "97",
+        "formulation": {
+            "drug": "Moxifloxacin",
+            "strength": [
+                "400 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "98",
+        "formulation": {
+            "drug": "Mycophenolate Mofetil",
+            "strength": [
+                "250 mg",
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Immunosuppressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "99",
+        "formulation": {
+            "drug": "Mycophenolate Sodium",
+            "strength": [
+                "180 mg",
+                "360 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Immunosuppressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "100",
+        "formulation": {
+            "drug": "Nifedipine",
+            "strength": [
+                "10 mg",
+                "20 mg",
+                "30 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Calcium Channel Blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "101",
+        "formulation": {
+            "drug": "Nystatin",
+            "strength": [
+                "500000 IU"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antifungal",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "102",
+        "formulation": {
+            "drug": "Olanzapine",
+            "strength": [
+                "5 mg",
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antipsychotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "103",
+        "formulation": {
+            "drug": "Olmesartan",
+            "strength": [
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihypertensive (ARB)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "104",
+        "formulation": {
+            "drug": "Omeprazole + Domperidone",
+            "strength": [
+                "20 mg + 10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Proton Pump Inhibitor + Prokinetic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "105",
+        "formulation": {
+            "drug": "Omeprazole",
+            "strength": [
+                "20 mg",
+                "40 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Proton Pump Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "106",
+        "formulation": {
+            "drug": "Oxybutynin",
+            "strength": [
+                "2 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticholinergic (Urinary Antispasmodic)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "107",
+        "formulation": {
+            "drug": "Pantoprazole",
+            "strength": [
+                "20 mg",
+                "40 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Proton Pump Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "108",
+        "formulation": {
+            "drug": "Paracetamol + Caffeine",
+            "strength": [
+                "500 mg + 30 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Analgesic / Stimulant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "109",
+        "formulation": {
+            "drug": "Phenobarbital",
+            "strength": [
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Barbiturate / Anticonvulsant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "110",
+        "formulation": {
+            "drug": "Phenytoin",
+            "strength": [
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticonvulsant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "111",
+        "formulation": {
+            "drug": "Piracetam",
+            "strength": [
+                "800 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Nootropic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "112",
+        "formulation": {
+            "drug": "Piroxicam",
+            "strength": [
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "NSAID",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "113",
+        "formulation": {
+            "drug": "Potassium Iodide",
+            "strength": [
+                "100 mcg",
+                "200 mcg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Supplement",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "114",
+        "formulation": {
+            "drug": "Prednisolone",
+            "strength": [
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Corticosteroid",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "115",
+        "formulation": {
+            "drug": "Pregabalin",
+            "strength": [
+                "75 mg",
+                "150 mg",
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet / Capsule"
+        },
+        "type": "Tablet / Capsule",
+        "therapeutic_class": "Anticonvulsant / Neuropathic Pain",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "116",
+        "formulation": {
+            "drug": "Primaquine",
+            "strength": [
+                "15 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antimalarial",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "117",
+        "formulation": {
+            "drug": "Probenecid",
+            "strength": [
+                "500 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Uricosuric Agent",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "118",
+        "formulation": {
+            "drug": "Prochlorperazine",
+            "strength": [
+                "5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antiemetic / Antipsychotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "119",
+        "formulation": {
+            "drug": "Promethazine",
+            "strength": [
+                "25 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antihistamine",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "120",
+        "formulation": {
+            "drug": "Propranolol",
+            "strength": [
+                "40 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Beta-blocker",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "121",
+        "formulation": {
+            "drug": "Pyridoxine",
+            "strength": [
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Vitamin B6 Supplement",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "122",
+        "formulation": {
+            "drug": "Quetiapine",
+            "strength": [
+                "100 mg",
+                "200 mg",
+                "300 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antipsychotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "123",
+        "formulation": {
+            "drug": "Rabeprazole",
+            "strength": [
+                "10 mg",
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Proton Pump Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "124",
+        "formulation": {
+            "drug": "Ramipril",
+            "strength": [
+                "5 mg",
+                "10 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "ACE Inhibitor",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "125",
+        "formulation": {
+            "drug": "Risperidone",
+            "strength": [
+                "1 mg",
+                "2 mg",
+                "3 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antipsychotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "126",
+        "formulation": {
+            "drug": "Rivaroxaban",
+            "strength": [
+                "10 mg",
+                "15 mg",
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Anticoagulant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "127",
+        "formulation": {
+            "drug": "Rosuvastatin",
+            "strength": [
+                "5 mg",
+                "10 mg",
+                "20 mg",
+                "40 mg",
+                "80 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Statin",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "128",
+        "formulation": {
+            "drug": "Roxithromycin",
+            "strength": [
+                "50 mg",
+                "150 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antibiotic",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "129",
+        "formulation": {
+            "drug": "Sertraline",
+            "strength": [],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidepressant (SSRI)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "130",
+        "formulation": {
+            "drug": "Sildenafil + Dapoxetine",
+            "strength": [
+                "50 mg + 30 mg",
+                "100 mg + 50 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Erectile Dysfunction + Antidepressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "131",
+        "formulation": {
+            "drug": "Sildenafil",
+            "strength": [
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Erectile Dysfunction",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "132",
+        "formulation": {
+            "drug": "Simvastatin",
+            "strength": [
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Statin",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "133",
+        "formulation": {
+            "drug": "Sitagliptin",
+            "strength": [
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Antidiabetic (DPP-4 Inhibitor)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "134",
+        "formulation": {
+            "drug": "Spironolactone",
+            "strength": [
+                "25 mg",
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet / Capsule"
+        },
+        "type": "Tablet / Capsule",
+        "therapeutic_class": "Diuretic (Aldosterone Antagonist)",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "135",
+        "formulation": {
+            "drug": "Tacrolimus",
+            "strength": [
+                "1 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "Immunosuppressant",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "136",
+        "formulation": {
+            "drug": "Tadalafil",
+            "strength": [
+                "10 mg",
+                "20 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Erectile Dysfunction",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "137",
+        "formulation": {
+            "drug": "Tamsulosin + Dutasteride",
+            "strength": [
+                "0.4 mg + 0.5 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "BPH Treatment",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "138",
+        "formulation": {
+            "drug": "Tamsulosin",
+            "strength": [
+                "0.4 mg"
+            ],
+            "route": "Oral",
+            "pack": "Capsule"
+        },
+        "type": "Capsule",
+        "therapeutic_class": "BPH Treatment",
+        "prod": "solid-oral"
+    },
+    {
+        "sno": "139",
+        "formulation": {
+            "drug": "Tapentadol",
+            "strength": [
+                "50 mg",
+                "100 mg"
+            ],
+            "route": "Oral",
+            "pack": "Tablet"
+        },
+        "type": "Tablet",
+        "therapeutic_class": "Analgesic (Opioid)",
+        "prod": "solid-oral"
+    }
+]
