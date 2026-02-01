@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { getAllFormulations } from "@/lib/formulation";
 import FormulationTable from "@/components/FormulationTable";
+
+export const metadata: Metadata = {
+  title: "Formulations",
+  description:
+    "Browse a comprehensive list of pharmaceutical formulations available for manufacturing and export.",
+};
 
 export default function FormulationsPage() {
   // Fetch data on the server

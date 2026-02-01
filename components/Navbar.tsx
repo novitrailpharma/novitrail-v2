@@ -50,13 +50,10 @@ export default function Navbar() {
                   href={link.href}
                   onMouseEnter={() => setHoveredIndex(index)}
                   className={`relative px-5 py-2.5 text-base transition-colors duration-300 ${
-                    // TEXT COLOR RULE:
-                    // Active = Darker Slate (Not Orange)
-                    // Inactive = Slate 600
                     isActive ? "text-slate-900 font-semibold" : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  {/* 1. HOVER LAYER: Subtle Gray Slide */}
+                  {/* Hover Layer */}
                   {hoveredIndex === index && !isActive && (
                     <motion.span
                       layoutId="nav-hover-pill"
@@ -65,7 +62,7 @@ export default function Navbar() {
                     />
                   )}
 
-                  {/* 2. ACTIVE LAYER: The Orange Border Frame */}
+                  {/* Active Layer */}
                   {isActive && (
                     <motion.span
                       layoutId="nav-active-border"
@@ -82,9 +79,15 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          {/* RIGHT ACTIONS GROUP (Desktop CTA + Mobile CTA + Menu Toggle) */}
+          <div className="flex items-center gap-3 md:gap-4">
+            
+            {/* 1. Desktop CTA (Hidden on Mobile) */}
+            <motion.div 
+              className="hidden md:block" 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+            >
               <Link
                 href="/contact"
                 className="bg-novitrail-orange text-white px-8 py-3 rounded-md font-medium text-base shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-colors"
@@ -92,35 +95,50 @@ export default function Navbar() {
                 Request Quote
               </Link>
             </motion.div>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden relative z-50 p-2 -mr-2 text-slate-600 hover:text-novitrail-blue transition-colors focus:outline-none"
-          >
-             <AnimatePresence mode="wait">
-              {open ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                >
-                  <X size={30} />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                >
-                  <Menu size={30} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
+            {/* 2. Mobile CTA (Visible ONLY on Mobile) */}
+            {/* Smaller, punchy button for mobile users */}
+            <motion.div 
+              className="md:hidden" 
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/contact"
+                className="bg-novitrail-orange text-white text-xs font-bold px-4 py-2.5 rounded-md shadow-md hover:bg-orange-600 transition-colors uppercase tracking-wide"
+              >
+                Get Quote
+              </Link>
+            </motion.div>
+
+            {/* 3. Mobile Menu Button */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden relative z-50 p-1 text-slate-600 hover:text-novitrail-blue transition-colors focus:outline-none"
+              aria-label="Toggle menu"
+            >
+               <AnimatePresence mode="wait">
+                {open ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                  >
+                    <X size={28} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                  >
+                    <Menu size={28} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -149,7 +167,7 @@ export default function Navbar() {
                       onClick={() => setOpen(false)}
                       className={`group flex items-center justify-between p-3 rounded-lg text-base font-medium transition-colors ${
                         isActive 
-                        ? "bg-white border border-novitrail-orange text-slate-900" // Active Mobile: Orange Border, Dark Text
+                        ? "bg-white border border-novitrail-orange text-slate-900"
                         : "text-slate-700 hover:bg-slate-50"
                       }`}
                     >
@@ -164,8 +182,17 @@ export default function Navbar() {
                   </motion.div>
                 );
               })}
-              <div className="pt-4">
-                 <Link href="/contact" className="block w-full text-center bg-novitrail-orange text-white py-4 rounded-md font-medium">Request Quote</Link>
+              
+              {/* Optional: We keep a larger button in the menu too, 
+                  in case they missed the top one or want a larger tap target */}
+              <div className="pt-4 border-t border-slate-100 mt-2">
+                 <Link 
+                   href="/contact" 
+                   onClick={() => setOpen(false)}
+                   className="block w-full text-center bg-slate-100 text-slate-600 py-4 rounded-md font-medium hover:bg-slate-200 transition-colors"
+                 >
+                   Contact Support
+                 </Link>
               </div>
             </div>
           </motion.div>
