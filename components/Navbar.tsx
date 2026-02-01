@@ -1,101 +1,11 @@
-// "use client";
-
-// import { useState } from "react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { Menu, X } from "lucide-react";
-
-// const NAV_LINKS = [
-//   { href: "/about", label: "About" },
-//   { href: "/products", label: "Our Products" },
-//   { href: "/formulations", label: "Formulations" },
-//   { href: "/manufacturing", label: "Manufacturing" },
-//   { href: "/export", label: "Export" },
-// ];
-
-// export default function Navbar() {
-//   const [open, setOpen] = useState(false);
-
-//   return (
-//     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-//       <div className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
-//         {/* Logo */}
-//         <Link href="/" className="flex items-center">
-//           <Image
-//             src="/logo.png"
-//             alt="Novitrail Pharmaceuticals"
-//             width={140}
-//             height={40}
-//             priority
-//           />
-//         </Link>
-
-//         {/* Desktop Nav */}
-//         <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-700">
-//           {NAV_LINKS.map(link => (
-//             <Link
-//               key={link.href}
-//               href={link.href}
-//               className="hover:text-novitrail-blue"
-//             >
-//               {link.label}
-//             </Link>
-//           ))}
-//         </nav>
-
-//         {/* Desktop CTA */}
-//         <Link
-//           href="/contact"
-//           className="hidden md:inline-block bg-novitrail-orange text-white px-4 py-2 rounded-md text-sm hover:opacity-90 transition"
-//         >
-//           Request Quote
-//         </Link>
-
-//         {/* Mobile Menu Button */}
-//         <button
-//           onClick={() => setOpen(!open)}
-//           className="md:hidden text-novitrail-blue"
-//           aria-label="Toggle navigation menu"
-//         >
-//           {open ? <X size={26} /> : <Menu size={26} />}
-//         </button>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       {open && (
-//         <div className="md:hidden border-t bg-white">
-//           <nav className="flex flex-col px-6 py-4 space-y-4 text-sm font-medium text-gray-700">
-//             {NAV_LINKS.map(link => (
-//               <Link
-//                 key={link.href}
-//                 href={link.href}
-//                 onClick={() => setOpen(false)}
-//                 className="hover:text-novitrail-blue"
-//               >
-//                 {link.label}
-//               </Link>
-//             ))}
-
-//             <Link
-//               href="/contact"
-//               onClick={() => setOpen(false)}
-//               className="mt-2 bg-novitrail-orange text-white px-4 py-2 rounded-md text-center"
-//             >
-//               Request Quote
-//             </Link>
-//           </nav>
-//         </div>
-//       )}
-//     </header>
-//   );
-// }
-
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -106,100 +16,161 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const pathname = usePathname();
 
   return (
-    // Added 'h-20' to reserve height to prevent layout shifts
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-100">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        
-        {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/logo.png"
-            alt="Novitrail Pharmaceuticals"
-            width={140}
-            height={40}
-            className="w-auto h-8 md:h-10" // Responsive logo sizing
-            priority
-          />
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-novitrail-blue"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-4">
-          <Link
-            href="/contact"
-            className="bg-novitrail-orange text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-all"
-          >
-            Request Quote
+    <>
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/60">
+        <div className="mx-auto flex h-20 max-w-[85rem] items-center justify-between px-6 md:px-8">
+          
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0 z-50">
+            <Image
+              src="/logo.png"
+              alt="Novitrail Pharmaceuticals"
+              width={160}
+              height={45}
+              className="w-auto h-9 md:h-11"
+              priority
+            />
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 -mr-2 text-gray-600 hover:text-novitrail-blue transition-colors focus:outline-none"
-          aria-label="Toggle navigation menu"
-          aria-expanded={open}
-        >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
+          {/* Desktop Nav */}
+          <nav 
+            className="hidden md:flex items-center gap-2"
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {NAV_LINKS.map((link, index) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  className={`relative px-5 py-2.5 text-base transition-colors duration-300 ${
+                    // TEXT COLOR RULE:
+                    // Active = Darker Slate (Not Orange)
+                    // Inactive = Slate 600
+                    isActive ? "text-slate-900 font-semibold" : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  {/* 1. HOVER LAYER: Subtle Gray Slide */}
+                  {hoveredIndex === index && !isActive && (
+                    <motion.span
+                      layoutId="nav-hover-pill"
+                      className="absolute inset-0 bg-slate-100 rounded-md -z-20"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+
+                  {/* 2. ACTIVE LAYER: The Orange Border Frame */}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active-border"
+                      className="absolute inset-0 border border-novitrail-orange rounded-md -z-10"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
+                  
+                  <span className="relative z-10">{link.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/contact"
+                className="bg-novitrail-orange text-white px-8 py-3 rounded-md font-medium text-base shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-colors"
+              >
+                Request Quote
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden relative z-50 p-2 -mr-2 text-slate-600 hover:text-novitrail-blue transition-colors focus:outline-none"
+          >
+             <AnimatePresence mode="wait">
+              {open ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                >
+                  <X size={30} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                >
+                  <Menu size={30} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+        </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
-      {/* We use specific logic here: absolute positioning to float over content, shadow for depth */}
-      <div
-        className={`md:hidden absolute left-0 right-0 top-16 bg-white border-b shadow-xl transition-all duration-300 ease-in-out origin-top ${
-          open 
-            ? "opacity-100 visible translate-y-0" 
-            : "opacity-0 invisible -translate-y-4 pointer-events-none"
-        }`}
-      >
-        <div className="flex flex-col p-6 space-y-4">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="group flex items-center justify-between border-b border-gray-100 pb-3 text-base font-medium text-gray-700 hover:text-novitrail-blue transition-colors"
-            >
-              {link.label}
-              {/* Subtle arrow icon that appears/moves on hover */}
-              <ChevronRight 
-                size={16} 
-                className="text-gray-400 group-hover:text-novitrail-blue group-hover:translate-x-1 transition-all" 
-              />
-            </Link>
-          ))}
-
-          <div className="pt-4">
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="flex w-full items-center justify-center bg-novitrail-orange text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-all"
-            >
-              Request Quote
-            </Link>
-            
-            {/* Optional: Add contact info or secondary links below CTA */}
-            <p className="mt-4 text-center text-xs text-gray-400 font-medium">
-              Novitrail Pharmaceuticals &copy; {new Date().getFullYear()}
-            </p>
-          </div>
-        </div>
-      </div>
-    </header>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden fixed top-20 left-0 right-0 bg-white border-b border-slate-100 shadow-2xl overflow-hidden z-40"
+          >
+            <div className="flex flex-col p-6 space-y-2">
+              {NAV_LINKS.map((link, i) => {
+                 const isActive = pathname === link.href;
+                 return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`group flex items-center justify-between p-3 rounded-lg text-base font-medium transition-colors ${
+                        isActive 
+                        ? "bg-white border border-novitrail-orange text-slate-900" // Active Mobile: Orange Border, Dark Text
+                        : "text-slate-700 hover:bg-slate-50"
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronRight 
+                        size={18} 
+                        className={`transition-all ${
+                          isActive ? "text-novitrail-orange" : "text-slate-300 group-hover:text-novitrail-blue group-hover:translate-x-1"
+                        }`}
+                      />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              <div className="pt-4">
+                 <Link href="/contact" className="block w-full text-center bg-novitrail-orange text-white py-4 rounded-md font-medium">Request Quote</Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

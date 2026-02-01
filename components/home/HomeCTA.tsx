@@ -1,10 +1,10 @@
 export default function HomeCTA() {
   return (
     <section className="relative py-20 bg-novitrail-blue text-white border-b border-slate-100">
-      <div className="absolute inset-0 bg-gradient-to-r from-novitrail-orange/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-r from-novitrail-orange/10 to-transparent pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-slate-100 !mb-6">
+        <h2 className="text-slate-100 mb-6!">
           Let’s Discuss Your Requirements
         </h2>
 
