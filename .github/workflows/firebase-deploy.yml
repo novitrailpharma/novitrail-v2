@@ -1,6 +1,9 @@
 name: Deploy Novitrail V2 to Firebase
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
