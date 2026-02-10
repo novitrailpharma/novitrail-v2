@@ -37,7 +37,9 @@ export default function AboutFounder() {
               
               {/* Optional: LinkedIn Badge */}
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/abhay-kumar-sen-44aa8714/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-lg border border-slate-100 text-blue-700 hover:scale-110 transition-transform"
                 aria-label="Connect on LinkedIn"
               >

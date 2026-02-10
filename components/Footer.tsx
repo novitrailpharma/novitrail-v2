@@ -44,7 +44,7 @@ export default function Footer() {
               <a href="#" className="hover:text-novitrail-orange transition">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="hover:text-novitrail-orange transition">
+              <a href="https://www.linkedin.com/in/abhay-kumar-sen-44aa8714/" target="_blank" rel="noopener noreferrer" className="hover:text-novitrail-orange transition">
                 <Linkedin size={18} />
               </a>
             </div>
