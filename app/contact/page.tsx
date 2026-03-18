@@ -18,27 +18,36 @@ function ContactForm() {
     message: "",
   });
 
-  // Effect: Prefill message if a product(s) is found in URL
+  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+
+  // Effect: Prefill message if products are found in Session Storage or URL
   useEffect(() => {
-    if (productsInterest) {
-      const productList = productsInterest.split(",").map((p) => p.trim());
+    let list: string[] = [];
+    const stored = sessionStorage.getItem("novitrail_enquiry_products");
+    if (stored) {
+      try { list = JSON.parse(stored); } catch (e) {}
+    }
+
+    if (list.length === 0 && productsInterest) {
+      list = productsInterest.split(",").map((p) => p.trim());
+    } else if (list.length === 0 && productInterest) {
+      list = [productInterest.trim()];
+    }
+
+    if (list.length > 0) {
+      setSelectedProducts(list);
       
       let messageText = "";
-      if (productList.length === 1) {
-        messageText = `I am interested in purchasing ${productList[0]}. Please provide a quotation and minimum order quantity (MOQ) details.`;
+      if (list.length === 1) {
+        messageText = `I am interested in purchasing ${list[0]}. Please provide a quotation and minimum order quantity (MOQ) details.`;
       } else {
-        const bulletPoints = productList.map(p => `- ${p}`).join("\n");
-        messageText = `I am interested in purchasing the following formulations:\n${bulletPoints}\n\nPlease provide quotation and minimum order quantity (MOQ) details.`;
+        const bulletPoints = list.map(p => `- ${p}`).join("\n");
+        messageText = `I am interested in purchasing the following formulations:\n\n${bulletPoints}\n\nPlease provide quotation and minimum order quantity (MOQ) details.`;
       }
 
       setForm((prev) => ({
         ...prev,
         message: messageText,
-      }));
-    } else if (productInterest) {
-      setForm((prev) => ({
-        ...prev,
-        message: `I am interested in purchasing ${productInterest}. Please provide a quotation and minimum order quantity (MOQ) details.`,
       }));
     }
   }, [productInterest, productsInterest]);
@@ -50,15 +59,12 @@ function ContactForm() {
   };
 
   // Construct Email Subject
-  let subject = `General Enquiry from ${form.company || "Website"}`;
+  let subject = `General Enquiry from ${form.company || form.name || "Website"}`;
   
-  if (productsInterest) {
-    const count = productsInterest.split(",").length;
-    subject = count === 1 
-      ? `Enquiry for ${productsInterest} - ${form.company || form.name}`
-      : `Enquiry for ${count} Formulations - ${form.company || form.name}`;
-  } else if (productInterest) {
-    subject = `Enquiry for ${productInterest} - ${form.company || form.name}`;
+  if (selectedProducts.length > 1) {
+    subject = `Enquiry for ${selectedProducts.length} Formulations - ${form.company || form.name || "Website"}`;
+  } else if (selectedProducts.length === 1) {
+    subject = `Enquiry for ${selectedProducts[0]} - ${form.company || form.name || "Website"}`;
   }
 
   const body = `Name: ${form.name}

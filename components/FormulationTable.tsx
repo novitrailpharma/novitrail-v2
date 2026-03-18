@@ -145,8 +145,10 @@ export default function FormulationTable({ data }: Props) {
       return `${form.drug}${strength}`;
     });
     
-    const queryParam = encodeURIComponent(selectedProducts.join(", "));
-    router.push(`/contact?products=${queryParam}`);
+    // Use sessionStorage for bulk selections to avoid '414 URI Too Long' errors
+    sessionStorage.setItem("novitrail_enquiry_products", JSON.stringify(selectedProducts));
+    
+    router.push("/contact");
   };
 
   // Helper to remove specific tags from the active list
