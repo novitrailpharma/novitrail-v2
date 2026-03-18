@@ -53,15 +53,15 @@ ${form.message}`;
   const isFormReady = form.name.trim() !== "" && form.email.includes("@");
 
   return (
-    <div className="border border-slate-200 rounded-xl p-8 bg-white shadow-sm hover:border-slate-300 transition-all duration-300">
-      <h2 className="text-xl font-semibold mb-6 text-slate-900">Send an Enquiry</h2>
+    <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-8 bg-white dark:bg-dark-card shadow-sm hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
+      <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">Send an Enquiry</h2>
 
       <div className="space-y-5">
         <div className="grid md:grid-cols-2 gap-5">
           <input
             name="name"
             placeholder="Your Name"
-            className="w-full border border-slate-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400"
+            className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200"
             onChange={handleChange}
             value={form.name}
           />
@@ -69,7 +69,7 @@ ${form.message}`;
             name="email"
             type="email"
             placeholder="Email Address"
-            className="w-full border border-slate-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400"
+            className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200"
             onChange={handleChange}
             value={form.email}
           />
@@ -79,7 +79,7 @@ ${form.message}`;
           <input
             name="company"
             placeholder="Company Name"
-            className="w-full border border-slate-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400"
+            className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200"
             onChange={handleChange}
             value={form.company}
           />
@@ -88,7 +88,7 @@ ${form.message}`;
           <div className="relative">
             <select
               name="country"
-              className="w-full border border-slate-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all appearance-none bg-white text-slate-700 invalid:text-slate-400"
+              className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all appearance-none text-slate-700 dark:text-gray-200 invalid:text-slate-400"
               onChange={handleChange}
               value={form.country}
               required
@@ -111,7 +111,7 @@ ${form.message}`;
           name="message"
           placeholder="Your enquiry (products, quantities, market, etc.)"
           rows={5}
-          className="w-full border border-slate-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 resize-none"
+          className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200 resize-none"
           onChange={handleChange}
           value={form.message}
         />
@@ -120,7 +120,7 @@ ${form.message}`;
           href={isFormReady ? mailtoLink : "#"}
           className={`block w-full text-center py-4 rounded-lg font-semibold transition-all shadow-md ${isFormReady
               ? "bg-novitrail-orange text-white hover:bg-orange-600 hover:shadow-lg transform hover:-translate-y-0.5"
-              : "bg-slate-100 text-slate-400 cursor-not-allowed"
+              : "bg-slate-100 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
             }`}
           onClick={(e) => !isFormReady && e.preventDefault()}
         >
@@ -133,16 +133,16 @@ ${form.message}`;
 
 export default function ContactPage() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 dark:bg-dark-bg min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
 
         {/* Header */}
         <div className="mb-12">
           <div className="w-12 h-1 bg-novitrail-orange mb-6" />
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white">
             Enquiry & Contact
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600 leading-relaxed">
+          <p className="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             For product enquiries, contract manufacturing, and export opportunities,
             please reach out to us using the form below or through our direct contact
             channels.
@@ -153,7 +153,7 @@ export default function ContactPage() {
 
           {/* Left: Enquiry Form (Wrapped in Suspense for useSearchParams) */}
           <div className="lg:col-span-7">
-            <Suspense fallback={<div className="h-96 bg-white rounded-xl animate-pulse" />}>
+            <Suspense fallback={<div className="h-96 bg-white dark:bg-dark-card rounded-xl animate-pulse" />}>
               <ContactForm />
             </Suspense>
           </div>
@@ -162,18 +162,18 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-8">
               <div>
-                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">
+                <h3 className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-6">
                   Contact Information
                 </h3>
 
-                <div className="space-y-6 text-slate-700">
+                <div className="space-y-6 text-slate-700 dark:text-slate-300">
                   <div className="flex gap-4 items-start group">
-                    <div className="p-3 bg-white border border-slate-200 rounded-lg group-hover:border-novitrail-orange/50 transition-colors">
+                    <div className="p-3 bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-700 rounded-lg group-hover:border-novitrail-orange/50 transition-colors">
                       <MapPin className="text-novitrail-orange" size={20} />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900 mb-1">Head Office</p>
-                      <p className="text-sm leading-relaxed text-slate-600">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-1">Head Office</p>
+                      <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                         SN.123, Vardhman Crown Mall, Sector-19,
                         <br />
                         Dwarka, New Delhi – 110075
@@ -182,35 +182,35 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex gap-4 items-start group">
-                    <div className="p-3 bg-white border border-slate-200 rounded-lg group-hover:border-novitrail-orange/50 transition-colors">
+                    <div className="p-3 bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-700 rounded-lg group-hover:border-novitrail-orange/50 transition-colors">
                       <Phone className="text-novitrail-orange" size={20} />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900 mb-1">Phone</p>
-                      <p className="text-sm text-slate-600">+91-7622-490181, 494181</p>
-                      <p className="text-sm text-slate-600">+91-9990115992</p>
+                      <p className="font-semibold text-slate-900 dark:text-white mb-1">Phone</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">+91-7622-490181, 494181</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">+91-9990115992</p>
                     </div>
                   </div>
 
                   <div className="flex gap-4 items-start group">
                     {/* Icon Box */}
-                    <div className="p-3 bg-white border border-slate-200 rounded-lg group-hover:border-novitrail-orange/50 transition-colors">
+                    <div className="p-3 bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-700 rounded-lg group-hover:border-novitrail-orange/50 transition-colors">
                       <Mail className="text-novitrail-orange" size={20} />
                     </div>
 
                     {/* Text Content */}
                     <div>
-                      <p className="font-semibold text-slate-900 mb-1">Email</p>
+                      <p className="font-semibold text-slate-900 dark:text-white mb-1">Email</p>
                       <div className="flex flex-col gap-1">
                         <a
                           href="mailto:info@novitrail.com"
-                          className="text-sm text-slate-600 hover:text-novitrail-orange transition underline underline-offset-4"
+                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-novitrail-orange transition underline underline-offset-4"
                         >
                           info@novitrail.com
                         </a>
                         <a
                           href="mailto:novitrailpharma1@gmail.com"
-                          className="text-sm text-slate-600 hover:text-novitrail-orange transition underline underline-offset-4"
+                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-novitrail-orange transition underline underline-offset-4"
                         >
                           novitrailpharma1@gmail.com
                         </a>
@@ -221,9 +221,9 @@ export default function ContactPage() {
               </div>
 
               {/* WhatsApp CTA */}
-              <div className="border border-green-200/60 rounded-xl p-6 bg-gradient-to-br from-green-50 to-white hover:shadow-md transition-all">
-                <h3 className="font-semibold text-green-900 mb-2">Quick WhatsApp Enquiry</h3>
-                <p className="text-sm text-green-800/80 mb-4">
+              <div className="border border-green-200/60 dark:border-green-800/40 rounded-xl p-6 bg-gradient-to-br from-green-50 to-white dark:from-green-900/20 dark:to-dark-surface hover:shadow-md transition-all">
+                <h3 className="font-semibold text-green-900 dark:text-green-300 mb-2">Quick WhatsApp Enquiry</h3>
+                <p className="text-sm text-green-800/80 dark:text-green-400/70 mb-4">
                   For faster communication, chat directly with our sales team.
                 </p>
                 <a

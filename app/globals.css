@@ -1,41 +1,124 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --color-novitrail-blue: #0B4F8A;
+  --color-novitrail-blue-dark: #083D6B;
+  --color-novitrail-blue-light: #E8F1F8;
   --color-novitrail-orange: #F37021;
+  --color-novitrail-orange-light: #FFF4ED;
+
+  --color-dark-bg: #0F172A;
+  --color-dark-surface: #1E293B;
+  --color-dark-border: #334155;
+  --color-dark-card: #1A2332;
+  --color-dark-footer: #080E1A;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 2s infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 8s ease infinite;
 }
 
+/* ── Keyframes ───────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(243, 112, 33, 0.3); }
+  50%      { box-shadow: 0 0 40px rgba(243, 112, 33, 0.6); }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Base Styles ─────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-gray-700 antialiased leading-relaxed;
+  @apply bg-white dark:bg-dark-bg text-slate-700 dark:text-slate-300 antialiased leading-relaxed transition-colors duration-300;
 }
 
 section {
   @apply relative py-20;
 }
 
-/* Typography rules
-   - Page titles (h1): font-semibold
-   - Section titles (h2): font-medium
-   - Avoid `font-bold` on headings for a lighter, professional tone
-*/
-
 h1 {
-  @apply text-4xl font-semibold tracking-tight leading-tight text-novitrail-blue;
+  @apply text-4xl font-semibold tracking-tight leading-tight text-slate-900 dark:text-white;
 }
 
 h2 {
-  @apply text-3xl font-medium tracking-tight leading-tight text-novitrail-blue mb-12;
+  @apply text-3xl font-medium tracking-tight leading-tight text-slate-900 dark:text-white mb-12;
 }
 
 h3 {
-  @apply text-2xl font-medium tracking-tight leading-tight;
+  @apply text-2xl font-medium tracking-tight leading-tight text-slate-800 dark:text-slate-100;
 }
 
-/* Paragraph spacing: add vertical rhythm between consecutive paragraphs */
 p + p {
   @apply mt-5;
+}
+
+/* ── Utility Classes ─────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+:where(.dark) .glass-card {
+  background: rgba(26, 35, 50, 0.7);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0B4F8A, #F37021);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:where(.dark) .gradient-text {
+  background: linear-gradient(135deg, #60A5FA, #FB923C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border-left {
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(to bottom, #F37021, #0B4F8A) 1;
+}
+
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(11, 79, 138, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+:where(.dark) .dot-pattern {
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+}
+
+.section-glow {
+  background: radial-gradient(ellipse at center, rgba(243, 112, 33, 0.03) 0%, transparent 70%);
+}
+
+:where(.dark) .section-glow {
+  background: radial-gradient(ellipse at center, rgba(243, 112, 33, 0.04) 0%, transparent 70%);
+}
+
+/* ── Consistent card style ───────────────────────── */
+.card {
+  @apply bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-700/60 rounded-xl;
+  @apply hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-black/20;
+  @apply hover:-translate-y-0.5 transition-all duration-300;
 }

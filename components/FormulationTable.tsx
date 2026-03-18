@@ -42,7 +42,7 @@ export default function FormulationTable({ data }: Props) {
         header: "Drug / API",
         accessorFn: (row) => row.formulation.drug,
         cell: (info) => (
-          <span className="font-semibold text-slate-900">
+          <span className="font-semibold text-slate-900 dark:text-white">
             {info.getValue() as string}
           </span>
         ),
@@ -51,7 +51,7 @@ export default function FormulationTable({ data }: Props) {
         header: "Strength",
         accessorFn: (row) => row.formulation.strength?.join(", ") || "-",
         cell: (info) => (
-          <span className="text-slate-700 font-medium">{info.getValue() as string}</span>
+          <span className="text-slate-700 dark:text-slate-300 font-medium">{info.getValue() as string}</span>
         ),
       },
       {
@@ -59,7 +59,7 @@ export default function FormulationTable({ data }: Props) {
         accessorKey: "type",
         filterFn: multiSelectFilter,
         cell: (info) => (
-          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">
             {info.getValue() as string}
           </span>
         ),
@@ -119,7 +119,7 @@ export default function FormulationTable({ data }: Props) {
   return (
     <div className="space-y-6">
       {/* --- Toolbar Section --- */}
-      <div className="bg-white p-1 rounded-xl">
+      <div className="bg-white dark:bg-dark-card p-1 rounded-xl">
         <div className="flex flex-col xl:flex-row items-start xl:items-center gap-4">
           
           {/* 1. Search Bar */}
@@ -132,12 +132,12 @@ export default function FormulationTable({ data }: Props) {
               placeholder="Search drug, strength, or class..."
               value={globalFilter ?? ""}
               onChange={(e) => setGlobalFilter(e.target.value)}
-              className="pl-10 pr-4 py-2.5 w-full border border-slate-200 rounded-lg text-sm bg-slate-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-novitrail-blue/20 focus:border-novitrail-blue transition-all"
+              className="pl-10 pr-4 py-2.5 w-full border border-slate-200 dark:border-slate-700 rounded-lg text-sm bg-slate-50/50 dark:bg-dark-bg dark:text-slate-200 focus:bg-white dark:focus:bg-dark-bg focus:outline-none focus:ring-2 focus:ring-novitrail-blue/20 focus:border-novitrail-blue transition-all"
             />
           </div>
 
           {/* Divider (Desktop Only) */}
-          <div className="hidden xl:block w-px h-8 bg-slate-200 mx-2"></div>
+          <div className="hidden xl:block w-px h-8 bg-slate-200 dark:bg-slate-700 mx-2"></div>
 
           {/* 2. Filter Dropdowns */}
           <div className="flex flex-wrap items-center gap-3 w-full">
@@ -191,7 +191,7 @@ export default function FormulationTable({ data }: Props) {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     onClick={() => removeFilterValue(filter.id, val)}
-                    className="group flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-medium text-slate-700 hover:bg-red-50 hover:border-red-100 hover:text-red-600 transition-colors"
+                    className="group flex items-center gap-1.5 px-3 py-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:border-red-100 dark:hover:border-red-800 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                   >
                     {val}
                     <X size={12} className="text-slate-400 group-hover:text-red-500" />
@@ -211,16 +211,16 @@ export default function FormulationTable({ data }: Props) {
       </div>
 
       {/* --- Data Table --- */}
-      <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+      <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-card shadow-sm">
         <div className="max-h-[65vh] overflow-y-auto custom-scrollbar">
           <table className="min-w-full text-sm border-separate border-spacing-0">
-            <thead className="sticky top-0 z-20 bg-slate-50 shadow-sm">
+            <thead className="sticky top-0 z-20 bg-slate-50 dark:bg-slate-800/80 shadow-sm">
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="px-6 py-4 text-left font-semibold text-slate-600 border-b border-slate-200 bg-slate-50"
+                      className="px-6 py-4 text-left font-semibold text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80"
                     >
                       {flexRender(
                         header.column.columnDef.header,
@@ -237,13 +237,13 @@ export default function FormulationTable({ data }: Props) {
                 <tr>
                   <td
                     colSpan={columns.length}
-                    className="py-24 text-center text-slate-500"
+                    className="py-24 text-center text-slate-500 dark:text-slate-400"
                   >
                     <div className="flex flex-col items-center justify-center gap-3">
-                      <div className="p-4 bg-slate-50 rounded-full">
+                      <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-full">
                         <FileText size={32} className="text-slate-300" />
                       </div>
-                      <p className="text-lg font-medium text-slate-900">No formulations found</p>
+                      <p className="text-lg font-medium text-slate-900 dark:text-white">No formulations found</p>
                       <p className="text-sm">Try adjusting your search or filters.</p>
                       <button
                         onClick={() => { setColumnFilters([]); setGlobalFilter(""); }}
@@ -260,14 +260,14 @@ export default function FormulationTable({ data }: Props) {
                     key={row.id}
                     className={`
                       group transition-colors
-                      ${idx % 2 === 0 ? "bg-white" : "bg-slate-50/30"}
-                      hover:bg-blue-50/50
+                      ${idx % 2 === 0 ? "bg-white dark:bg-dark-card" : "bg-slate-50/30 dark:bg-slate-800/20"}
+                      hover:bg-blue-50/50 dark:hover:bg-slate-800/50
                     `}
                   >
                     {row.getVisibleCells().map((cell) => (
                       <td
                         key={cell.id}
-                        className="px-6 py-4 border-b border-slate-100 align-top group-last:border-none"
+                        className="px-6 py-4 border-b border-slate-100 dark:border-slate-700/50 align-top group-last:border-none"
                       >
                         {flexRender(
                           cell.column.columnDef.cell,
@@ -285,7 +285,7 @@ export default function FormulationTable({ data }: Props) {
 
       {/* Footer Stat */}
       <div className="flex justify-end px-2">
-        <span className="text-xs font-medium text-slate-400 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+        <span className="text-xs font-medium text-slate-400 bg-slate-50 dark:bg-dark-card px-3 py-1 rounded-full border border-slate-100 dark:border-slate-700">
           Showing {table.getRowModel().rows.length} results
         </span>
       </div>
@@ -365,8 +365,8 @@ function FilterDropdown({
         }}
         className={`flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 ${
           selectedValues.length > 0
-            ? "bg-blue-50 border-blue-200 text-blue-700 ring-blue-100"
-            : "bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50 focus:ring-slate-200"
+            ? "bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 ring-blue-100"
+            : "bg-white dark:bg-dark-card border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 focus:ring-slate-200"
         }`}
       >
         {title}
@@ -391,10 +391,10 @@ function FilterDropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 4, scale: 0.98 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute top-full left-0 mt-2 w-72 max-h-[22rem] flex flex-col bg-white rounded-xl shadow-2xl border border-slate-200 z-40 overflow-hidden ring-1 ring-slate-900/5"
+            className="absolute top-full left-0 mt-2 w-72 max-h-[22rem] flex flex-col bg-white dark:bg-dark-card rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 z-40 overflow-hidden ring-1 ring-slate-900/5"
           >
             {/* Header: Title + Clear Button */}
-            <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-100 bg-slate-50/50 shrink-0">
+            <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 shrink-0">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 Select {title}
               </span>
@@ -409,7 +409,7 @@ function FilterDropdown({
             </div>
 
             {/* Search Input (Only show if many options) */}
-            <div className="p-2 border-b border-slate-100 bg-white shrink-0">
+            <div className="p-2 border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-dark-card shrink-0">
                <div className="relative">
                  <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400" />
                  <input 
@@ -417,7 +417,7 @@ function FilterDropdown({
                     placeholder={`Filter ${title}...`}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-8 pr-3 py-1.5 text-sm border border-slate-200 rounded-md bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-novitrail-blue/20 focus:border-novitrail-blue/50 transition-all placeholder:text-slate-400"
+                    className="w-full pl-8 pr-3 py-1.5 text-sm border border-slate-200 dark:border-slate-700 rounded-md bg-slate-50 dark:bg-dark-bg dark:text-slate-200 focus:bg-white dark:focus:bg-dark-bg focus:outline-none focus:ring-2 focus:ring-novitrail-blue/20 focus:border-novitrail-blue/50 transition-all placeholder:text-slate-400"
                     autoFocus
                  />
                </div>
@@ -433,16 +433,16 @@ function FilterDropdown({
                       key={option}
                       className={`flex items-center gap-3 px-2 py-2 text-sm rounded-lg cursor-pointer transition-all select-none group ${
                         isSelected 
-                          ? "bg-blue-50/80 text-blue-900" 
-                          : "text-slate-700 hover:bg-slate-50"
+                          ? "bg-blue-50/80 dark:bg-blue-900/20 text-blue-900 dark:text-blue-200" 
+                          : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
                       }`}
                     >
                       {/* Animated Checkbox */}
                       <div
                         className={`relative flex items-center justify-center w-4 h-4 border rounded transition-all duration-200 shrink-0 ${
                           isSelected
-                            ? "bg-novitrail-orange border-novitrail-orange shadow-sm shadow-orange-200"
-                            : "border-slate-300 bg-white group-hover:border-slate-400"
+                            ? "bg-novitrail-orange border-novitrail-orange shadow-sm shadow-orange-200 dark:shadow-orange-900/30"
+                            : "border-slate-300 dark:border-slate-600 bg-white dark:bg-dark-bg group-hover:border-slate-400"
                         }`}
                       >
                         <AnimatePresence>

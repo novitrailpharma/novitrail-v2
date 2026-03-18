@@ -10,7 +10,14 @@ import AboutFounder from "@/components/about/AboutFounder";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Novitrail Pharmaceuticals, our vision, leadership, and global pharmaceutical export operations.",
+    "Learn about Novitrail Pharmaceuticals, our vision, leadership, and global pharmaceutical export operations since 2017.",
+  keywords: [
+    "about Novitrail Pharmaceuticals",
+    "pharmaceutical company India",
+    "pharma manufacturer history",
+    "Abhay Kumar Sen",
+    "pharmaceutical export company",
+  ],
 };
 
 export default function AboutPage() {
