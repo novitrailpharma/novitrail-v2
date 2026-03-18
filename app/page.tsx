@@ -1,6 +1,7 @@
 import HomeHero from "@/components/home/HomeHero";
 import HomeIntro from "@/components/home/HomeIntro";
 import HomeProducts from "@/components/home/HomeProducts";
+import HomeFormulationsPromo from "@/components/home/HomeFormulationsPromo";
 import HomeCapabilities from "@/components/home/HomeCapabilities";
 import HomeMarkets from "@/components/home/HomeMarkets";
 import HomeWhy from "@/components/home/HomeWhy";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HomeCapabilities />
       <HomeMarkets />
       <HomeWhy />
+      <HomeFormulationsPromo />
       <HomeCTA />
     </>
   );

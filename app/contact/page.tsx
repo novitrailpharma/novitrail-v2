@@ -7,7 +7,8 @@ import countriesData from "@/data/countries.json"; // Importing your JSON
 
 function ContactForm() {
   const searchParams = useSearchParams();
-  const productInterest = searchParams.get("product");
+  const productInterest = searchParams.get("product"); // Backward compatibility
+  const productsInterest = searchParams.get("products"); // New multi-select support
 
   const [form, setForm] = useState({
     name: "",
@@ -17,15 +18,30 @@ function ContactForm() {
     message: "",
   });
 
-  // Effect: Prefill message if a product is found in URL
+  // Effect: Prefill message if a product(s) is found in URL
   useEffect(() => {
-    if (productInterest) {
+    if (productsInterest) {
+      const productList = productsInterest.split(",").map((p) => p.trim());
+      
+      let messageText = "";
+      if (productList.length === 1) {
+        messageText = `I am interested in purchasing ${productList[0]}. Please provide a quotation and minimum order quantity (MOQ) details.`;
+      } else {
+        const bulletPoints = productList.map(p => `- ${p}`).join("\n");
+        messageText = `I am interested in purchasing the following formulations:\n${bulletPoints}\n\nPlease provide quotation and minimum order quantity (MOQ) details.`;
+      }
+
+      setForm((prev) => ({
+        ...prev,
+        message: messageText,
+      }));
+    } else if (productInterest) {
       setForm((prev) => ({
         ...prev,
         message: `I am interested in purchasing ${productInterest}. Please provide a quotation and minimum order quantity (MOQ) details.`,
       }));
     }
-  }, [productInterest]);
+  }, [productInterest, productsInterest]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -33,10 +49,17 @@ function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Construct Email Subject & Body
-  const subject = productInterest
-    ? `Enquiry for ${productInterest} - ${form.company || form.name}`
-    : `General Enquiry from ${form.company || "Website"}`;
+  // Construct Email Subject
+  let subject = `General Enquiry from ${form.company || "Website"}`;
+  
+  if (productsInterest) {
+    const count = productsInterest.split(",").length;
+    subject = count === 1 
+      ? `Enquiry for ${productsInterest} - ${form.company || form.name}`
+      : `Enquiry for ${count} Formulations - ${form.company || form.name}`;
+  } else if (productInterest) {
+    subject = `Enquiry for ${productInterest} - ${form.company || form.name}`;
+  }
 
   const body = `Name: ${form.name}
 Email: ${form.email}

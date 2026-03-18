@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function HomeHero() {
   return (
-    <section className="relative h-[90vh] flex items-center overflow-hidden bg-white dark:bg-dark-bg">
+    <section className="relative min-h-screen md:h-[90vh] flex items-center overflow-hidden bg-white dark:bg-dark-bg pb-24 md:pb-0">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-right md:bg-center"
@@ -53,7 +53,7 @@ export default function HomeHero() {
             manufacturing, bulk supply, and contract solutions.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4">
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

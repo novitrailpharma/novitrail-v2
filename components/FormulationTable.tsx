@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import {
   ColumnDef,
   flexRender,
@@ -10,7 +11,7 @@ import {
   ColumnFiltersState,
   FilterFn,
 } from "@tanstack/react-table";
-import { X, ChevronDown, Filter, Search, FileText } from "lucide-react";
+import { X, ChevronDown, Filter, Search, FileText, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FormulationItem } from "@/types/formulation";
 
@@ -34,10 +35,38 @@ export default function FormulationTable({ data }: Props) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   // State for Global Search Text
   const [globalFilter, setGlobalFilter] = useState("");
+  // State for Row Selection
+  const [rowSelection, setRowSelection] = useState({});
+  const router = useRouter();
 
   // --- Table Configuration ---
   const columns = useMemo<ColumnDef<FormulationItem>[]>(
     () => [
+      {
+        id: "select",
+        header: ({ table }) => (
+          <div className="flex items-center justify-center">
+            <input
+              type="checkbox"
+              checked={table.getIsAllPageRowsSelected()}
+              onChange={table.getToggleAllPageRowsSelectedHandler()}
+              className="w-4 h-4 rounded border-slate-300 text-novitrail-orange focus:ring-novitrail-orange transition-colors cursor-pointer"
+              aria-label="Select all rows"
+            />
+          </div>
+        ),
+        cell: ({ row }) => (
+          <div className="flex items-center justify-center">
+            <input
+              type="checkbox"
+              checked={row.getIsSelected()}
+              onChange={row.getToggleSelectedHandler()}
+              className="w-4 h-4 rounded border-slate-300 text-novitrail-orange focus:ring-novitrail-orange transition-colors cursor-pointer"
+              aria-label="Select row"
+            />
+          </div>
+        ),
+      },
       {
         header: "Drug / API",
         accessorFn: (row) => row.formulation.drug,
@@ -91,12 +120,34 @@ export default function FormulationTable({ data }: Props) {
     state: {
       columnFilters,
       globalFilter,
+      rowSelection,
     },
+    enableRowSelection: true,
+    onRowSelectionChange: setRowSelection,
     onColumnFiltersChange: setColumnFilters,
     onGlobalFilterChange: setGlobalFilter,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
   });
+  
+  // Handlers for the floating action bar
+  const selectedRows = table.getSelectedRowModel().rows;
+  
+  const handleEnquireSelected = () => {
+    if (selectedRows.length === 0) return;
+    
+    // Format selections like: "Paracetamol (500mg)", "Ibuprofen (200mg, 400mg)"
+    const selectedProducts = selectedRows.map(row => {
+      const form = row.original.formulation;
+      const strength = form.strength && form.strength.length > 0 
+        ? ` (${form.strength.join(", ")})` 
+        : "";
+      return `${form.drug}${strength}`;
+    });
+    
+    const queryParam = encodeURIComponent(selectedProducts.join(", "));
+    router.push(`/contact?products=${queryParam}`);
+  };
 
   // Helper to remove specific tags from the active list
   const removeFilterValue = (columnId: string, valueToRemove: string) => {
@@ -260,8 +311,13 @@ export default function FormulationTable({ data }: Props) {
                     key={row.id}
                     className={`
                       group transition-colors
-                      ${idx % 2 === 0 ? "bg-white dark:bg-dark-card" : "bg-slate-50/30 dark:bg-slate-800/20"}
-                      hover:bg-blue-50/50 dark:hover:bg-slate-800/50
+                      ${row.getIsSelected() 
+                          ? "bg-blue-50/60 dark:bg-blue-900/20 shadow-[inset_4px_0_0_0_rgba(249,115,22,1)]" 
+                          : idx % 2 === 0 
+                            ? "bg-white dark:bg-dark-card" 
+                            : "bg-slate-50/30 dark:bg-slate-800/20"
+                       }
+                      ${!row.getIsSelected() && "hover:bg-blue-50/40 dark:hover:bg-slate-800/40"}
                     `}
                   >
                     {row.getVisibleCells().map((cell) => (
@@ -289,6 +345,40 @@ export default function FormulationTable({ data }: Props) {
           Showing {table.getRowModel().rows.length} results
         </span>
       </div>
+
+      {/* Floating Action Bar for Selected Items */}
+      <AnimatePresence>
+        {selectedRows.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl bg-slate-900 dark:bg-slate-800 text-white px-6 py-4 rounded-2xl shadow-2xl shadow-slate-900/20 flex flex-col sm:flex-row items-center justify-between gap-4 border border-slate-700 dark:border-slate-600"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-novitrail-orange/20 flex items-center justify-center text-novitrail-orange">
+                <Check size={16} strokeWidth={3} />
+              </div>
+              <div>
+                <span className="font-semibold block">{selectedRows.length} formulations selected</span>
+                <button 
+                  onClick={() => table.toggleAllRowsSelected(false)}
+                  className="text-xs text-slate-400 hover:text-white transition-colors"
+                >
+                  Clear Selection
+                </button>
+              </div>
+            </div>
+            
+            <button
+              onClick={handleEnquireSelected}
+              className="w-full sm:w-auto bg-novitrail-orange text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg shadow-orange-500/20 hover:bg-orange-600 hover:shadow-orange-500/30 transition-all active:scale-95"
+            >
+              Enquire About Selected
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

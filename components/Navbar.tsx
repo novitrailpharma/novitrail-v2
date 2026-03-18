@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-white/85 dark:bg-dark-bg/85 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-700/50 shadow-sm shadow-slate-100/50 dark:shadow-black/20">
-        <div className="mx-auto flex h-20 max-w-[85rem] items-center justify-between px-6 md:px-8">
+        <div className="mx-auto flex h-16 md:h-20 max-w-[85rem] items-center justify-between px-4 md:px-8">
           
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 z-50">
@@ -32,7 +32,7 @@ export default function Navbar() {
               alt="Novitrail Pharmaceuticals"
               width={160}
               height={45}
-              className="w-auto h-9 md:h-11"
+              className="w-auto h-7 sm:h-9 md:h-11"
               priority
             />
           </Link>
@@ -81,10 +81,7 @@ export default function Navbar() {
           </nav>
 
           {/* RIGHT ACTIONS GROUP */}
-          <div className="flex items-center gap-3 md:gap-4">
-            
-            {/* Theme Toggle */}
-            <ThemeToggle />
+          <div className="flex items-center gap-2 md:gap-4">
             
             {/* Desktop CTA */}
             <motion.div 
@@ -107,11 +104,14 @@ export default function Navbar() {
             >
               <Link
                 href="/contact"
-                className="bg-novitrail-orange text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow-md hover:bg-orange-600 transition-colors uppercase tracking-wide"
+                className="bg-novitrail-orange text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md sm:rounded-lg shadow-md hover:bg-orange-600 transition-colors uppercase tracking-wide whitespace-nowrap"
               >
-                Get Quote
+                Request Quote
               </Link>
             </motion.div>
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
 
             {/* Mobile Menu Button */}
             <button
@@ -153,7 +153,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed top-20 left-0 right-0 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-700 shadow-2xl overflow-hidden z-40"
+            className="md:hidden fixed top-16 md:top-20 left-0 right-0 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-700 shadow-2xl overflow-hidden z-40"
           >
             <div className="flex flex-col p-6 space-y-2">
               {NAV_LINKS.map((link, i) => {
