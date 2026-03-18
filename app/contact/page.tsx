@@ -69,7 +69,7 @@ Country: ${form.country}
 Message:
 ${form.message}`;
 
-  const mailtoLink = `mailto:info@novitrail.com?subject=${encodeURIComponent(
+  const mailtoLink = `mailto:novitrailpharma1@gmail.com?subject=${encodeURIComponent(
     subject
   )}&body=${encodeURIComponent(body)}`;
 
@@ -226,16 +226,16 @@ export default function ContactPage() {
                       <p className="font-semibold text-slate-900 dark:text-white mb-1">Email</p>
                       <div className="flex flex-col gap-1">
                         <a
-                          href="mailto:info@novitrail.com"
-                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-novitrail-orange transition underline underline-offset-4"
-                        >
-                          info@novitrail.com
-                        </a>
-                        <a
                           href="mailto:novitrailpharma1@gmail.com"
                           className="text-sm text-slate-600 dark:text-slate-400 hover:text-novitrail-orange transition underline underline-offset-4"
                         >
                           novitrailpharma1@gmail.com
+                        </a>
+                        <a
+                          href="mailto:info@novitrail.com"
+                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-novitrail-orange transition underline underline-offset-4"
+                        >
+                          info@novitrail.com
                         </a>
                       </div>
                     </div>

@@ -119,9 +119,16 @@ export default function HomeFormulationsPromo() {
                   </div>
                   <span className="text-sm font-semibold truncate">1 selected</span>
                 </div>
-                <div className="h-8 px-4 bg-novitrail-orange rounded-lg flex items-center justify-center text-xs font-bold shadow-lg">
+                <motion.div 
+                  animate={{ 
+                    scale:           [1, 1, 1, 1, 1, 1, 0.9, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                    backgroundColor: ["#f37021", "#f37021", "#f37021", "#f37021", "#f37021", "#f37021", "#ea580c", "#f37021", "#f37021", "#f37021", "#f37021", "#f37021", "#f37021", "#f37021", "#f37021", "#f37021"] 
+                  }}
+                  transition={{ duration: 12, times: [0, 0.08, 0.10, 0.12, 0.16, 0.24, 0.26, 0.28, 0.34, 0.40, 0.42, 0.44, 0.50, 0.60, 0.90, 1], repeat: Infinity, ease: "easeInOut" }}
+                  className="h-8 px-4 rounded-lg flex items-center justify-center text-xs font-bold shadow-lg"
+                >
                   Enquire
-                </div>
+                </motion.div>
               </motion.div>
               
               {/* --- 2. Fake Contact Form UI --- */}
@@ -152,9 +159,16 @@ export default function HomeFormulationsPromo() {
                   <div className="w-1/2 h-2 rounded bg-slate-600 dark:bg-slate-300" />
                 </div>
 
-                <div className="mt-4 h-10 w-full bg-novitrail-blue rounded-lg flex items-center justify-center text-white text-xs font-semibold shadow-md">
+                <motion.div 
+                  animate={{ 
+                    scale:           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.95, 1, 1, 1, 1, 1],
+                    backgroundColor: ["#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#1e3a8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a", "#0b4f8a"] 
+                  }}
+                  transition={{ duration: 12, times: [0, 0.08, 0.10, 0.12, 0.16, 0.24, 0.26, 0.28, 0.34, 0.40, 0.42, 0.44, 0.50, 0.60, 0.90, 1], repeat: Infinity, ease: "easeInOut" }}
+                  className="mt-4 h-10 w-full rounded-lg flex items-center justify-center text-white text-xs font-semibold shadow-md"
+                >
                   Send Enquiry
-                </div>
+                </motion.div>
               </motion.div>
 
               {/* --- 3. Fake Email Client Window --- */}
@@ -180,7 +194,7 @@ export default function HomeFormulationsPromo() {
                   <div className="border-b border-slate-100 dark:border-slate-800 pb-3 mb-3 space-y-3">
                     <div className="flex items-center gap-3">
                       <span className="text-slate-400 text-xs w-8">To:</span>
-                      <div className="h-6 w-48 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 rounded text-xs flex items-center">info@novitrail.com</div>
+                      <div className="h-6 w-fit min-w-[12rem] bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 rounded text-xs flex items-center pr-3">novitrailpharma1@gmail.com</div>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-slate-400 text-xs w-8">Subj:</span>
@@ -220,9 +234,18 @@ export default function HomeFormulationsPromo() {
                   opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]
                 }}
                 transition={{ duration: 12, times: [0, 0.08, 0.10, 0.12, 0.16, 0.24, 0.26, 0.28, 0.34, 0.40, 0.42, 0.44, 0.50, 0.60, 0.90, 1], repeat: Infinity, ease: "easeInOut" }}
-                className="absolute z-30 w-6 h-6 text-slate-800 dark:text-slate-300 drop-shadow-md"
+                className="absolute z-30 w-6 h-6 text-slate-800 dark:text-slate-200 drop-shadow-xl flex items-center justify-center pointer-events-none"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                {/* Click Ripple Effect */}
+                <motion.div
+                  className="absolute inset-0 bg-novitrail-orange/40 rounded-full blur-sm"
+                  animate={{ 
+                    scale:   [0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0, 0, 0],
+                    opacity: [0, 0, 1,   0, 0, 0, 1,   0, 0, 0, 1,   0, 0, 0, 0, 0]
+                  }}
+                  transition={{ duration: 12, times: [0, 0.08, 0.10, 0.12, 0.16, 0.24, 0.26, 0.28, 0.34, 0.40, 0.42, 0.44, 0.50, 0.60, 0.90, 1], repeat: Infinity, ease: "linear" }}
+                />
+                <svg className="relative z-10 w-full h-full" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 3L21 16L15 17L19 24L17 25L13 18L8 23V3Z" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
                 </svg>
               </motion.div>
