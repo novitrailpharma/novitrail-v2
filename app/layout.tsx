@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
+import Analytics from "@/components/Analytics";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -126,6 +127,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col font-[family-name:var(--font-inter)]">
+        <Analytics />
         <ThemeProvider>
           <Navbar />
           <main className="flex-1">

@@ -150,7 +150,7 @@ function ContactForm() {
     <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-8 bg-white dark:bg-dark-card shadow-sm hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
       <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">Send an Enquiry</h2>
 
-      <form className="space-y-5" onSubmit={handleSubmit}>
+      <form className="clarity-mask space-y-5" onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 gap-5">
           <input
             name="name"
