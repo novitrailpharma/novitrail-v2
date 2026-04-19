@@ -1,15 +1,11 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
-import { useRef } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function HomeFormulationsPromo() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
   return (
     <section className="py-24 bg-white dark:bg-dark-bg relative overflow-hidden">
       {/* Background accents */}

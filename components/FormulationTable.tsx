@@ -11,13 +11,12 @@ import {
   ColumnFiltersState,
   FilterFn,
 } from "@tanstack/react-table";
-import { X, ChevronDown, Filter, Search, FileText, Check } from "lucide-react";
+import { X, ChevronDown, Search, FileText, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FormulationItem } from "@/types/formulation";
 import {
   readEnquiryDraft,
   writeEnquiryDraft,
-  type EnquiryDraft,
 } from "@/lib/enquiry";
 
 // --- Custom Filter Logic: Checks if row value exists in selected array ---
@@ -431,8 +430,8 @@ function FilterDropdown({
 }: {
   title: string;
   columnId: string;
-  data: any[];
-  accessorKey: string;
+  data: FormulationItem[];
+  accessorKey: keyof FormulationItem | keyof FormulationItem["formulation"];
   currentFilters: ColumnFiltersState;
   setColumnFilters: React.Dispatch<React.SetStateAction<ColumnFiltersState>>;
   isNested?: boolean;
@@ -445,11 +444,16 @@ function FilterDropdown({
     if (!data) return [];
     
     const unique = new Set(data.map((item) => {
-      if (isNested) return item.formulation?.[accessorKey];
-      return item[accessorKey] || item.formulation?.[accessorKey];
+      const value = isNested
+        ? item.formulation[accessorKey as keyof FormulationItem["formulation"]]
+        : item[accessorKey as keyof FormulationItem] ||
+          item.formulation[accessorKey as keyof FormulationItem["formulation"]];
+
+      return typeof value === "string" ? value : undefined;
     }));
-    // @ts-ignore
-    return Array.from(unique).filter(Boolean).sort();
+    return Array.from(unique)
+      .filter((value): value is string => Boolean(value))
+      .sort();
   }, [data, accessorKey, isNested]);
 
   // Filter options based on internal search
