@@ -4,11 +4,18 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Mail, Phone, MapPin, ChevronDown } from "lucide-react";
 import countriesData from "@/data/countries.json"; // Importing your JSON
+import {
+  buildEnquiryMessage,
+  ENQUIRY_STORAGE_KEY,
+  type EnquiryDraft,
+} from "@/lib/enquiry";
+import TurnstileWidget from "@/components/contact/TurnstileWidget";
 
 function ContactForm() {
   const searchParams = useSearchParams();
   const productInterest = searchParams.get("product"); // Backward compatibility
   const productsInterest = searchParams.get("products"); // New multi-select support
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
 
   const [form, setForm] = useState({
     name: "",
@@ -19,35 +26,46 @@ function ContactForm() {
   });
 
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittedAt] = useState(() => Date.now());
+  const [submitState, setSubmitState] = useState<{
+    type: "idle" | "success" | "error";
+    message: string;
+  }>({
+    type: "idle",
+    message: "",
+  });
+  const [website, setWebsite] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileResetCount, setTurnstileResetCount] = useState(0);
 
   // Effect: Prefill message if products are found in Session Storage or URL
   useEffect(() => {
     let list: string[] = [];
-    const stored = sessionStorage.getItem("novitrail_enquiry_products");
+    let source: EnquiryDraft["source"] = "formulations";
+    const stored = sessionStorage.getItem(ENQUIRY_STORAGE_KEY);
     if (stored) {
-      try { list = JSON.parse(stored); } catch (e) {}
+      try {
+        const draft = JSON.parse(stored) as EnquiryDraft;
+        list = draft.products;
+        source = draft.source;
+      } catch {}
     }
 
-    if (list.length === 0 && productsInterest) {
+    if (productsInterest) {
       list = productsInterest.split(",").map((p) => p.trim());
-    } else if (list.length === 0 && productInterest) {
+      source = "formulations";
+    } else if (productInterest) {
       list = [productInterest.trim()];
+      source = "product";
     }
 
     if (list.length > 0) {
       setSelectedProducts(list);
-      
-      let messageText = "";
-      if (list.length === 1) {
-        messageText = `I am interested in purchasing ${list[0]}. Please provide a quotation and minimum order quantity (MOQ) details.`;
-      } else {
-        const bulletPoints = list.map(p => `- ${p}`).join("\n");
-        messageText = `I am interested in purchasing the following formulations:\n\n${bulletPoints}\n\nPlease provide quotation and minimum order quantity (MOQ) details.`;
-      }
 
       setForm((prev) => ({
         ...prev,
-        message: messageText,
+        message: buildEnquiryMessage(list, source),
       }));
     }
   }, [productInterest, productsInterest]);
@@ -55,37 +73,85 @@ function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    if (submitState.type !== "idle") {
+      setSubmitState({ type: "idle", message: "" });
+    }
+
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Construct Email Subject
-  let subject = `General Enquiry from ${form.company || form.name || "Website"}`;
-  
-  if (selectedProducts.length > 1) {
-    subject = `Enquiry for ${selectedProducts.length} Formulations - ${form.company || form.name || "Website"}`;
-  } else if (selectedProducts.length === 1) {
-    subject = `Enquiry for ${selectedProducts[0]} - ${form.company || form.name || "Website"}`;
-  }
+  const isFormReady =
+    form.name.trim() !== "" &&
+    form.email.includes("@") &&
+    form.country.trim() !== "" &&
+    form.message.trim() !== "" &&
+    turnstileToken.trim() !== "";
 
-  const body = `Name: ${form.name}
-Email: ${form.email}
-Company: ${form.company}
-Country: ${form.country}
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isFormReady || isSubmitting) {
+      return;
+    }
 
-Message:
-${form.message}`;
+    setIsSubmitting(true);
+    setSubmitState({ type: "idle", message: "" });
 
-  const mailtoLink = `mailto:novitrailpharma1@gmail.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          website,
+          submittedAt,
+          selectedProducts,
+          turnstileToken,
+        }),
+      });
 
-  const isFormReady = form.name.trim() !== "" && form.email.includes("@");
+      const data = (await response.json()) as { error?: string; message?: string };
+
+      if (!response.ok) {
+        setSubmitState({
+          type: "error",
+          message: data.error || "We could not send your enquiry right now.",
+        });
+        setTurnstileResetCount((count) => count + 1);
+        return;
+      }
+
+      setSubmitState({
+        type: "success",
+        message: data.message || "Your enquiry has been sent successfully.",
+      });
+      setForm({
+        name: "",
+        email: "",
+        company: "",
+        country: "",
+        message: "",
+      });
+      sessionStorage.removeItem(ENQUIRY_STORAGE_KEY);
+      setSelectedProducts([]);
+      setTurnstileResetCount((count) => count + 1);
+    } catch {
+      setSubmitState({
+        type: "error",
+        message: "We could not send your enquiry right now. Please try again shortly.",
+      });
+      setTurnstileResetCount((count) => count + 1);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-8 bg-white dark:bg-dark-card shadow-sm hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
       <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">Send an Enquiry</h2>
 
-      <div className="space-y-5">
+      <form className="space-y-5" onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 gap-5">
           <input
             name="name"
@@ -145,17 +211,54 @@ ${form.message}`;
           value={form.message}
         />
 
-        <a
-          href={isFormReady ? mailtoLink : "#"}
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          name="website"
+          type="text"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          className="hidden"
+        />
+
+        {turnstileSiteKey ? (
+          <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-dark-bg">
+            <TurnstileWidget
+              siteKey={turnstileSiteKey}
+              onTokenChange={setTurnstileToken}
+              resetSignal={turnstileResetCount}
+            />
+          </div>
+        ) : (
+          <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-300">
+            Turnstile is not configured yet. Add `NEXT_PUBLIC_TURNSTILE_SITE_KEY` to enable form submission.
+          </div>
+        )}
+
+        {submitState.type !== "idle" && (
+          <div
+            className={`rounded-lg border px-4 py-3 text-sm ${
+              submitState.type === "success"
+                ? "border-green-200 bg-green-50 text-green-800 dark:border-green-900/50 dark:bg-green-950/40 dark:text-green-300"
+                : "border-red-200 bg-red-50 text-red-800 dark:border-red-900/50 dark:bg-red-950/40 dark:text-red-300"
+            }`}
+          >
+            {submitState.message}
+          </div>
+        )}
+
+        <button
+          type="submit"
           className={`block w-full text-center py-4 rounded-lg font-semibold transition-all shadow-md ${isFormReady
               ? "bg-novitrail-orange text-white hover:bg-orange-600 hover:shadow-lg transform hover:-translate-y-0.5"
               : "bg-slate-100 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
             }`}
-          onClick={(e) => !isFormReady && e.preventDefault()}
+          disabled={!isFormReady || isSubmitting}
         >
-          Submit Enquiry via Email
-        </a>
-      </div>
+          {isSubmitting ? "Sending Enquiry..." : "Submit Enquiry"}
+        </button>
+      </form>
     </div>
   );
 }

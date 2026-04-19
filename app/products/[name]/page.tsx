@@ -6,6 +6,7 @@ import { ArrowLeft, ChevronRight, FileText, CheckCircle2 } from "lucide-react";
 import * as motion from "framer-motion/client"; // Next.js 14/15 client motion import style
 
 import { getOurProducts } from "@/lib/ourProducts";
+import ProductEnquiryButton from "@/components/products/ProductEnquiryButton";
 
 interface Props {
   params: Promise<{ name: string }>;
@@ -123,12 +124,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
             {/* Actions */}
             <div className="flex flex-wrap gap-4">
-              <a
-                href={`/contact?product=${encodeURIComponent(product.name)}`}
-                className="inline-flex items-center justify-center bg-novitrail-orange text-white px-8 py-4 rounded-md font-semibold text-base shadow-lg shadow-orange-900/20 hover:bg-orange-600 hover:shadow-orange-900/30 transition-all transform hover:-translate-y-0.5"
-              >
-                Request Quotation
-              </a>
+              <ProductEnquiryButton productName={product.name} />
               <button
                 disabled
                 className="inline-flex items-center justify-center bg-white border border-slate-300 text-slate-400 px-8 py-4 rounded-md font-medium cursor-not-allowed"

@@ -14,6 +14,7 @@ import {
 import { X, ChevronDown, Filter, Search, FileText, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FormulationItem } from "@/types/formulation";
+import { ENQUIRY_STORAGE_KEY, type EnquiryDraft } from "@/lib/enquiry";
 
 // --- Custom Filter Logic: Checks if row value exists in selected array ---
 const multiSelectFilter: FilterFn<FormulationItem> = (
@@ -37,7 +38,35 @@ export default function FormulationTable({ data }: Props) {
   const [globalFilter, setGlobalFilter] = useState("");
   // State for Row Selection
   const [rowSelection, setRowSelection] = useState({});
+  const [selectionHydrated, setSelectionHydrated] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const storedDraft = sessionStorage.getItem(ENQUIRY_STORAGE_KEY);
+    if (!storedDraft) {
+      setSelectionHydrated(true);
+      return;
+    }
+
+    try {
+      const draft = JSON.parse(storedDraft) as EnquiryDraft;
+      if (draft.source !== "formulations" || draft.products.length === 0) {
+        return;
+      }
+
+      const nextSelection: Record<string, boolean> = {};
+      data.forEach((item, index) => {
+        const label = getFormulationLabel(item);
+
+        if (draft.products.includes(label)) {
+          nextSelection[String(index)] = true;
+        }
+      });
+
+      setRowSelection(nextSelection);
+    } catch {}
+    setSelectionHydrated(true);
+  }, [data]);
 
   // --- Table Configuration ---
   const columns = useMemo<ColumnDef<FormulationItem>[]>(
@@ -132,21 +161,45 @@ export default function FormulationTable({ data }: Props) {
   
   // Handlers for the floating action bar
   const selectedRows = table.getSelectedRowModel().rows;
+  const selectedProducts = selectedRows.map((row) => getFormulationLabel(row.original));
+
+  useEffect(() => {
+    if (!selectionHydrated) {
+      return;
+    }
+
+    if (selectedProducts.length === 0) {
+      const storedDraft = sessionStorage.getItem(ENQUIRY_STORAGE_KEY);
+      if (!storedDraft) {
+        return;
+      }
+
+      try {
+        const draft = JSON.parse(storedDraft) as EnquiryDraft;
+        if (draft.source === "formulations") {
+          sessionStorage.removeItem(ENQUIRY_STORAGE_KEY);
+        }
+      } catch {
+        sessionStorage.removeItem(ENQUIRY_STORAGE_KEY);
+      }
+      return;
+    }
+
+    const draft: EnquiryDraft = {
+      source: "formulations",
+      products: selectedProducts,
+    };
+    sessionStorage.setItem(ENQUIRY_STORAGE_KEY, JSON.stringify(draft));
+  }, [selectedProducts, selectionHydrated]);
   
   const handleEnquireSelected = () => {
     if (selectedRows.length === 0) return;
-    
-    // Format selections like: "Paracetamol (500mg)", "Ibuprofen (200mg, 400mg)"
-    const selectedProducts = selectedRows.map(row => {
-      const form = row.original.formulation;
-      const strength = form.strength && form.strength.length > 0 
-        ? ` (${form.strength.join(", ")})` 
-        : "";
-      return `${form.drug}${strength}`;
-    });
-    
-    // Use sessionStorage for bulk selections to avoid '414 URI Too Long' errors
-    sessionStorage.setItem("novitrail_enquiry_products", JSON.stringify(selectedProducts));
+
+    const draft: EnquiryDraft = {
+      source: "formulations",
+      products: selectedProducts,
+    };
+    sessionStorage.setItem(ENQUIRY_STORAGE_KEY, JSON.stringify(draft));
     
     router.push("/contact");
   };
@@ -599,4 +652,13 @@ function FilterDropdown({
       `}</style>
     </div>
   );
+}
+
+function getFormulationLabel(item: FormulationItem) {
+  const strength =
+    item.formulation.strength && item.formulation.strength.length > 0
+      ? ` (${item.formulation.strength.join(", ")})`
+      : "";
+
+  return `${item.formulation.drug}${strength}`;
 }
