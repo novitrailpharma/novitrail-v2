@@ -18,6 +18,7 @@ import {
   readEnquiryDraft,
   writeEnquiryDraft,
 } from "@/lib/enquiry";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 // --- Custom Filter Logic: Checks if row value exists in selected array ---
 const multiSelectFilter: FilterFn<FormulationItem> = (
@@ -174,6 +175,10 @@ export default function FormulationTable({ data }: Props) {
   const handleEnquireSelected = () => {
     if (selectedRows.length === 0) return;
 
+    trackAnalyticsEvent("formulations_enquiry_requested", {
+      selected_count: selectedRows.length,
+      source: "formulations_table",
+    });
     const draft = readEnquiryDraft(sessionStorage);
     writeEnquiryDraft(sessionStorage, {
       ...draft,

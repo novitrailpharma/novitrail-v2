@@ -3,29 +3,20 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { trackPageView } from "@/lib/analytics";
 
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
-  }
-}
 
 export default function Analytics() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!gaMeasurementId || !window.gtag) {
+    if (!gaMeasurementId) {
       return;
     }
 
-    window.gtag("config", gaMeasurementId, {
-      page_path: pathname,
-      page_title: document.title,
-    });
+    trackPageView(pathname, document.title);
   }, [pathname]);
 
   return (

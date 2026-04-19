@@ -6,6 +6,7 @@ import {
   readEnquiryDraft,
   writeEnquiryDraft,
 } from "@/lib/enquiry";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 type Props = {
   productName: string;
@@ -15,6 +16,10 @@ export default function ProductEnquiryButton({ productName }: Props) {
   const router = useRouter();
 
   const handleClick = () => {
+    trackAnalyticsEvent("product_quotation_requested", {
+      product_name: productName,
+      source: "product_detail_page",
+    });
     const draft = readEnquiryDraft(sessionStorage);
     writeEnquiryDraft(sessionStorage, {
       ...draft,

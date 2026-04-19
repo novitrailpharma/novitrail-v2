@@ -11,6 +11,7 @@ import {
   type EnquiryDraft,
   writeEnquiryDraft,
 } from "@/lib/enquiry";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 import TurnstileWidget from "@/components/contact/TurnstileWidget";
 
 function ContactForm() {
@@ -113,6 +114,11 @@ function ContactForm() {
       const data = (await response.json()) as { error?: string; message?: string };
 
       if (!response.ok) {
+        trackAnalyticsEvent("contact_form_submit_failed", {
+          products_count: enquiryDraft.products.length,
+          formulations_count: enquiryDraft.formulations.length,
+          status_code: response.status,
+        });
         setSubmitState({
           type: "error",
           message: data.error || "We could not send your enquiry right now.",
@@ -125,6 +131,11 @@ function ContactForm() {
         type: "success",
         message: data.message || "Your enquiry has been sent successfully.",
       });
+      trackAnalyticsEvent("contact_form_submitted", {
+        products_count: enquiryDraft.products.length,
+        formulations_count: enquiryDraft.formulations.length,
+        status_code: response.status,
+      });
       setForm({
         name: "",
         email: "",
@@ -136,6 +147,11 @@ function ContactForm() {
       setEnquiryDraft(getEmptyEnquiryDraft());
       setTurnstileResetCount((count) => count + 1);
     } catch {
+      trackAnalyticsEvent("contact_form_submit_failed", {
+        products_count: enquiryDraft.products.length,
+        formulations_count: enquiryDraft.formulations.length,
+        status_code: 0,
+      });
       setSubmitState({
         type: "error",
         message: "We could not send your enquiry right now. Please try again shortly.",
@@ -147,10 +163,10 @@ function ContactForm() {
   };
 
   return (
-    <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-8 bg-white dark:bg-dark-card shadow-sm hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
+    <div className="min-w-0 border border-slate-200 dark:border-slate-700 rounded-xl p-5 sm:p-8 bg-white dark:bg-dark-card shadow-sm hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
       <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">Send an Enquiry</h2>
 
-      <form className="clarity-mask space-y-5" onSubmit={handleSubmit}>
+      <form className="clarity-mask min-w-0 space-y-5" onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 gap-5">
           <input
             name="name"
@@ -228,12 +244,14 @@ function ContactForm() {
         />
 
         {turnstileSiteKey ? (
-          <div className="flex justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-dark-bg">
+          <div className="overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-dark-bg">
+            <div className="mx-auto min-w-fit">
             <TurnstileWidget
               siteKey={turnstileSiteKey}
               onTokenChange={setTurnstileToken}
               resetSignal={turnstileResetCount}
             />
+            </div>
           </div>
         ) : (
           <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-300">
@@ -287,9 +305,9 @@ function SelectionTable({
   editHref: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-dark-bg">
-      <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-slate-700">
-        <div>
+    <div className="min-w-0 overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-dark-bg">
+      <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-slate-700">
+        <div className="min-w-0">
           <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{title}</h3>
           <p className="text-xs text-slate-500 dark:text-slate-400">Read-only selection table</p>
         </div>
@@ -298,14 +316,20 @@ function SelectionTable({
         </span>
         <Link
           href={editHref}
+          onClick={() =>
+            trackAnalyticsEvent("selection_edit_clicked", {
+              selection_type: title.toLowerCase().replace(/\s+/g, "_"),
+              item_count: items.length,
+            })
+          }
           className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-novitrail-orange hover:text-novitrail-orange dark:border-slate-700 dark:text-slate-300"
         >
           Edit
         </Link>
       </div>
 
-      <div className="max-h-48 overflow-y-auto bg-white custom-scrollbar dark:bg-dark-bg">
-        <table className="w-full border-collapse text-sm">
+      <div className="max-h-48 overflow-x-auto overflow-y-auto bg-white custom-scrollbar dark:bg-dark-bg">
+        <table className="w-full min-w-0 table-fixed border-collapse text-sm">
           <thead className="sticky top-0 z-10 bg-slate-50 text-left text-xs uppercase tracking-wider text-slate-500 shadow-sm dark:bg-slate-800 dark:text-slate-400">
             <tr>
               <th className="w-14 px-3 py-2 font-semibold">No.</th>
@@ -317,7 +341,7 @@ function SelectionTable({
               items.map((item, index) => (
                 <tr key={`${title}-${index}-${item}`}>
                   <td className="px-3 py-2 text-slate-500 dark:text-slate-400">{index + 1}</td>
-                  <td className="px-3 py-2 font-medium text-slate-800 dark:text-slate-200">{item}</td>
+                  <td className="break-words whitespace-normal px-3 py-2 font-medium text-slate-800 dark:text-slate-200">{item}</td>
                 </tr>
               ))
             ) : (
@@ -433,6 +457,11 @@ export default function ContactPage() {
                   href="https://wa.me/919990115992"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackAnalyticsEvent("whatsapp_cta_clicked", {
+                      source: "contact_page",
+                    })
+                  }
                   className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-green-700 transition"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>

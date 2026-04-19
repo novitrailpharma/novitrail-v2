@@ -10,6 +10,7 @@ import {
   readEnquiryDraft,
   writeEnquiryDraft,
 } from "@/lib/enquiry";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 type Props = {
   products: OurProduct[];
@@ -25,9 +26,19 @@ export default function ProductsGrid({ products }: Props) {
 
   const toggleProduct = (productName: string) => {
     setSelectedProducts((current) => {
-      const next = current.includes(productName)
+      const isRemoving = current.includes(productName);
+      const next = isRemoving
         ? current.filter((item) => item !== productName)
         : [...current, productName];
+
+      trackAnalyticsEvent(
+        isRemoving ? "product_deselected" : "product_selected",
+        {
+          product_name: productName,
+          total_selected: next.length,
+          source: "products_grid",
+        }
+      );
 
       const draft = readEnquiryDraft(sessionStorage);
       writeEnquiryDraft(sessionStorage, {
@@ -81,7 +92,17 @@ export default function ProductsGrid({ products }: Props) {
                 </span>
               </div>
 
-              <Link href={`/products/${slug}`} className="block" onClick={saveSelectedProducts}>
+              <Link
+                href={`/products/${slug}`}
+                className="block"
+                onClick={() => {
+                  trackAnalyticsEvent("product_specification_viewed", {
+                    product_name: product.name,
+                    source: "products_grid",
+                  });
+                  saveSelectedProducts();
+                }}
+              >
                 <div className="relative w-full aspect-[4/3] bg-slate-50 dark:bg-dark-card border border-slate-100 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-slate-200 dark:group-hover:border-slate-600">
                   <Image
                     src={`/products/${slug}.png`}
