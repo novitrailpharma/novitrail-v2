@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { promises as dns } from "node:dns";
 
 export const runtime = "nodejs";
 
@@ -12,6 +13,7 @@ const MAX_FIELD_LENGTHS = {
   company: 160,
   country: 120,
   message: 4000,
+  remarks: 4000,
   product: 160,
   productCount: 20,
 };
@@ -74,7 +76,38 @@ function checkRateLimit(key: string, now: number) {
 }
 
 function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return false;
+  }
+
+  const domain = email.split("@").pop()?.toLowerCase();
+  if (!domain || domain.length > 253 || domain.includes("..")) {
+    return false;
+  }
+
+  return domain.split(".").every((label) => {
+    return (
+      label.length > 0 &&
+      label.length <= 63 &&
+      !label.startsWith("-") &&
+      !label.endsWith("-") &&
+      /^[a-z0-9-]+$/.test(label)
+    );
+  });
+}
+
+async function hasMailReceivingDomain(email: string) {
+  const domain = email.split("@").pop()?.toLowerCase();
+  if (!domain) {
+    return false;
+  }
+
+  try {
+    const mxRecords = await dns.resolveMx(domain);
+    return mxRecords.some((record) => record.exchange && record.exchange !== ".");
+  } catch {
+    return false;
+  }
 }
 
 function isAllowedOrigin(request: NextRequest) {
@@ -170,6 +203,7 @@ export async function POST(request: NextRequest) {
     const company = String(body?.company || "").trim();
     const country = String(body?.country || "").trim();
     const message = String(body?.message || "").trim();
+    const remarks = String(body?.remarks || "").trim();
     const website = String(body?.website || "").trim();
     const submittedAt = Number(body?.submittedAt || 0);
     const turnstileToken = String(body?.turnstileToken || "").trim();
@@ -179,6 +213,13 @@ export async function POST(request: NextRequest) {
           .filter(Boolean)
           .slice(0, MAX_FIELD_LENGTHS.productCount)
       : [];
+    const selectedFormulations = Array.isArray(body?.selectedFormulations)
+      ? body.selectedFormulations
+          .map((value: unknown) => String(value).trim())
+          .filter(Boolean)
+          .slice(0, MAX_FIELD_LENGTHS.productCount)
+      : [];
+    const selectedItemCount = selectedProducts.length + selectedFormulations.length;
 
     if (website) {
       return NextResponse.json(
@@ -187,9 +228,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!name || !email || !country || !message) {
+    if (!name || !email || !company || !country || !remarks) {
       return NextResponse.json(
-        { error: "Name, email, country, and message are required." },
+        { error: "Name, email, company name, country, and enquiry details are required." },
         { status: 400 }
       );
     }
@@ -203,6 +244,13 @@ export async function POST(request: NextRequest) {
 
     if (!isValidEmail(email)) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    if (!(await hasMailReceivingDomain(email))) {
+      return NextResponse.json(
+        { error: "Please enter an email address with a valid mail-receiving domain." },
+        { status: 400 }
+      );
     }
 
     if (
@@ -222,7 +270,11 @@ export async function POST(request: NextRequest) {
       isTooLong(company, MAX_FIELD_LENGTHS.company) ||
       isTooLong(country, MAX_FIELD_LENGTHS.country) ||
       isTooLong(message, MAX_FIELD_LENGTHS.message) ||
-      selectedProducts.some((product: string) => isTooLong(product, MAX_FIELD_LENGTHS.product))
+      isTooLong(remarks, MAX_FIELD_LENGTHS.remarks) ||
+      selectedProducts.some((product: string) => isTooLong(product, MAX_FIELD_LENGTHS.product)) ||
+      selectedFormulations.some((formulation: string) =>
+        isTooLong(formulation, MAX_FIELD_LENGTHS.product)
+      )
     ) {
       return NextResponse.json(
         { error: "One or more fields are too long." },
@@ -281,51 +333,169 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    let subject = `General Enquiry from ${company || name || "Website"}`;
-    if (selectedProducts.length > 1) {
-      subject = `Enquiry for ${selectedProducts.length} Formulations - ${company || name || "Website"}`;
+    let subject = `General Enquiry from ${company}`;
+    if (selectedItemCount > 1) {
+      subject = `Enquiry for ${selectedItemCount} Items - ${company}`;
     } else if (selectedProducts.length === 1) {
-      subject = `Enquiry for ${selectedProducts[0]} - ${company || name || "Website"}`;
+      subject = `Enquiry for ${selectedProducts[0]} - ${company}`;
+    } else if (selectedFormulations.length === 1) {
+      subject = `Enquiry for ${selectedFormulations[0]} - ${company}`;
     }
 
     const text = [
       `Name: ${name}`,
       `Email: ${email}`,
-      `Company: ${company || "N/A"}`,
+      `Company: ${company}`,
       `Country: ${country}`,
-      selectedProducts.length ? `Selected Products: ${selectedProducts.join(", ")}` : "",
+      selectedProducts.length ? `Our Products: ${selectedProducts.join(", ")}` : "Our Products: None",
+      selectedFormulations.length
+        ? `Formulations: ${selectedFormulations.join(", ")}`
+        : "Formulations: None",
       "",
-      "Message:",
-      message,
+      "Enquiry Details:",
+      remarks,
     ]
       .filter(Boolean)
       .join("\n");
 
+    const buildSelectedItemsHtmlRows = (items: string[], emptyLabel: string) =>
+      items.length
+        ? items
+            .map(
+              (item: string, index: number) => `
+              <tr>
+                <td style="width:56px; padding:10px 12px; border-bottom:1px solid #fed7aa; color:#c2410c; font-size:12px; font-weight:700; text-align:center;">${index + 1}</td>
+                <td style="padding:10px 14px; border-bottom:1px solid #fed7aa; color:#7c2d12; font-size:14px; font-weight:600;">${escapeHtml(item)}</td>
+              </tr>
+            `
+            )
+            .join("")
+        : `
+        <tr>
+          <td colspan="2" style="padding:12px 14px; color:#64748b; font-size:14px;">No ${escapeHtml(emptyLabel)} selected</td>
+        </tr>
+      `;
+
     const html = `
-      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0f172a;">
-        <h2 style="margin-bottom: 16px;">New Website Enquiry</h2>
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Company:</strong> ${escapeHtml(company || "N/A")}</p>
-        <p><strong>Country:</strong> ${escapeHtml(country)}</p>
-        ${
-          selectedProducts.length
-            ? `<p><strong>Selected Products:</strong> ${escapeHtml(selectedProducts.join(", "))}</p>`
-            : ""
-        }
-        <p><strong>Message:</strong></p>
-        <pre style="white-space: pre-wrap; font-family: Arial, sans-serif; background: #f8fafc; padding: 16px; border-radius: 8px;">${escapeHtml(message)}</pre>
+      <div style="margin:0; padding:0; background:#f8fafc; font-family:Arial, sans-serif; color:#0f172a;">
+        <div style="max-width:680px; margin:0 auto; padding:28px 16px;">
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; overflow:hidden; box-shadow:0 12px 28px rgba(15, 23, 42, 0.08);">
+            <div style="background:linear-gradient(135deg, #0f3b67 0%, #145f8d 58%, #f97316 100%); padding:24px 28px; color:#ffffff;">
+              <p style="margin:0 0 6px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; opacity:0.82;">Novitrail Website</p>
+              <h2 style="margin:0; font-size:24px; line-height:1.25;">New Website Enquiry</h2>
+            </div>
+
+            <div style="padding:24px 28px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden;">
+                <tr>
+                  <td colspan="2" style="padding:14px 16px; background:#0f3b67; color:#ffffff; font-size:14px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Enquiry Summary</td>
+                </tr>
+                <tr>
+                  <td style="width:34%; padding:13px 16px; background:#f8fafc; border-bottom:1px solid #e2e8f0; color:#475569; font-size:13px; font-weight:700;">Name</td>
+                  <td style="padding:13px 16px; border-bottom:1px solid #e2e8f0; font-size:14px; font-weight:600;">${escapeHtml(name)}</td>
+                </tr>
+                <tr>
+                  <td style="padding:13px 16px; background:#f8fafc; border-bottom:1px solid #e2e8f0; color:#475569; font-size:13px; font-weight:700;">Email</td>
+                  <td style="padding:13px 16px; border-bottom:1px solid #e2e8f0; font-size:14px;"><a href="mailto:${escapeHtml(email)}" style="color:#0f5f8f; font-weight:600; text-decoration:none;">${escapeHtml(email)}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:13px 16px; background:#f8fafc; border-bottom:1px solid #e2e8f0; color:#475569; font-size:13px; font-weight:700;">Company</td>
+                  <td style="padding:13px 16px; border-bottom:1px solid #e2e8f0; font-size:14px; font-weight:600;">${escapeHtml(company)}</td>
+                </tr>
+                <tr>
+                  <td style="padding:13px 16px; background:#f8fafc; border-bottom:1px solid #e2e8f0; color:#475569; font-size:13px; font-weight:700;">Country</td>
+                  <td style="padding:13px 16px; border-bottom:1px solid #e2e8f0; font-size:14px; font-weight:600;">${escapeHtml(country)}</td>
+                </tr>
+                <tr>
+                  <td style="padding:13px 16px; background:#fffaf5; border-bottom:1px solid #e2e8f0; color:#9a3412; font-size:13px; font-weight:700; vertical-align:top;">Our Products</td>
+                  <td style="padding:0; border-bottom:1px solid #e2e8f0;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse; background:#fffaf5;">
+                      <tr>
+                        <td style="width:56px; padding:8px 12px; border-bottom:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:700; text-align:center; text-transform:uppercase;">No.</td>
+                        <td style="padding:8px 14px; border-bottom:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:700; text-transform:uppercase;">Item</td>
+                      </tr>
+                      ${buildSelectedItemsHtmlRows(selectedProducts, "products")}
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:13px 16px; background:#fffaf5; border-bottom:1px solid #e2e8f0; color:#9a3412; font-size:13px; font-weight:700; vertical-align:top;">Formulations</td>
+                  <td style="padding:0; border-bottom:1px solid #e2e8f0;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse; background:#fffaf5;">
+                      <tr>
+                        <td style="width:56px; padding:8px 12px; border-bottom:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:700; text-align:center; text-transform:uppercase;">No.</td>
+                        <td style="padding:8px 14px; border-bottom:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:700; text-transform:uppercase;">Item</td>
+                      </tr>
+                      ${buildSelectedItemsHtmlRows(selectedFormulations, "formulations")}
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:13px 16px; background:#f8fafc; color:#475569; font-size:13px; font-weight:700; vertical-align:top;">Enquiry Details</td>
+                  <td style="padding:14px 16px; font-size:14px; line-height:1.65;">
+                    <pre style="white-space:pre-wrap; margin:0; font-family:Arial, sans-serif; color:#0f172a;">${escapeHtml(remarks)}</pre>
+                  </td>
+                </tr>
+              </table>
+
+              <div style="margin-top:22px; padding-top:16px; border-top:1px solid #e2e8f0; color:#64748b; font-size:12px; line-height:1.6;">
+                Reply directly to this email to contact the sender. A copy is attempted to the entered email address via CC.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     `;
 
-    await transporter.sendMail({
-      from: smtpFromEmail,
-      to: contactToEmail,
-      replyTo: email,
-      subject,
-      text,
-      html,
-    });
+    try {
+      await transporter.sendMail({
+        from: smtpFromEmail,
+        to: contactToEmail,
+        cc: email,
+        replyTo: email,
+        subject,
+        text,
+        html,
+      });
+    } catch {
+      const fallbackText = [
+        text,
+        "",
+        "Delivery note: Sending a CC copy to the entered email failed. The entered email may be incorrect or unable to receive mail.",
+      ].join("\n");
+
+      const fallbackHtml = `
+        ${html}
+        <p style="margin-top: 16px; color: #b45309;">
+          <strong>Delivery note:</strong> Sending a CC copy to the entered email failed. The entered email may be incorrect or unable to receive mail.
+        </p>
+      `;
+
+      await transporter.sendMail({
+        from: smtpFromEmail,
+        to: contactToEmail,
+        replyTo: email,
+        subject: `[Email CC failed] ${subject}`,
+        text: fallbackText,
+        html: fallbackHtml,
+      });
+
+      return NextResponse.json(
+        {
+          success: true,
+          message:
+            "Your enquiry was sent to our team, but we could not send a copy to the entered email address. Please check whether the email is correct and working.",
+        },
+        {
+          status: 202,
+          headers: {
+            "Cache-Control": "no-store",
+            "X-RateLimit-Limit": String(RATE_LIMIT_MAX_REQUESTS),
+            "X-RateLimit-Reset": String(Math.ceil((mostRestrictiveResetAt - now) / 1000)),
+          },
+        }
+      );
+    }
 
     return NextResponse.json(
       { success: true, message: "Your enquiry has been sent successfully." },

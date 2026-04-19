@@ -14,7 +14,11 @@ import {
 import { X, ChevronDown, Filter, Search, FileText, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FormulationItem } from "@/types/formulation";
-import { ENQUIRY_STORAGE_KEY, type EnquiryDraft } from "@/lib/enquiry";
+import {
+  readEnquiryDraft,
+  writeEnquiryDraft,
+  type EnquiryDraft,
+} from "@/lib/enquiry";
 
 // --- Custom Filter Logic: Checks if row value exists in selected array ---
 const multiSelectFilter: FilterFn<FormulationItem> = (
@@ -42,29 +46,22 @@ export default function FormulationTable({ data }: Props) {
   const router = useRouter();
 
   useEffect(() => {
-    const storedDraft = sessionStorage.getItem(ENQUIRY_STORAGE_KEY);
-    if (!storedDraft) {
+    const draft = readEnquiryDraft(sessionStorage);
+    if (draft.formulations.length === 0) {
       setSelectionHydrated(true);
       return;
     }
 
-    try {
-      const draft = JSON.parse(storedDraft) as EnquiryDraft;
-      if (draft.source !== "formulations" || draft.products.length === 0) {
-        return;
+    const nextSelection: Record<string, boolean> = {};
+    data.forEach((item, index) => {
+      const label = getFormulationLabel(item);
+
+      if (draft.formulations.includes(label)) {
+        nextSelection[String(index)] = true;
       }
+    });
 
-      const nextSelection: Record<string, boolean> = {};
-      data.forEach((item, index) => {
-        const label = getFormulationLabel(item);
-
-        if (draft.products.includes(label)) {
-          nextSelection[String(index)] = true;
-        }
-      });
-
-      setRowSelection(nextSelection);
-    } catch {}
+    setRowSelection(nextSelection);
     setSelectionHydrated(true);
   }, [data]);
 
@@ -168,38 +165,21 @@ export default function FormulationTable({ data }: Props) {
       return;
     }
 
-    if (selectedProducts.length === 0) {
-      const storedDraft = sessionStorage.getItem(ENQUIRY_STORAGE_KEY);
-      if (!storedDraft) {
-        return;
-      }
-
-      try {
-        const draft = JSON.parse(storedDraft) as EnquiryDraft;
-        if (draft.source === "formulations") {
-          sessionStorage.removeItem(ENQUIRY_STORAGE_KEY);
-        }
-      } catch {
-        sessionStorage.removeItem(ENQUIRY_STORAGE_KEY);
-      }
-      return;
-    }
-
-    const draft: EnquiryDraft = {
-      source: "formulations",
-      products: selectedProducts,
-    };
-    sessionStorage.setItem(ENQUIRY_STORAGE_KEY, JSON.stringify(draft));
+    const draft = readEnquiryDraft(sessionStorage);
+    writeEnquiryDraft(sessionStorage, {
+      ...draft,
+      formulations: selectedProducts,
+    });
   }, [selectedProducts, selectionHydrated]);
   
   const handleEnquireSelected = () => {
     if (selectedRows.length === 0) return;
 
-    const draft: EnquiryDraft = {
-      source: "formulations",
-      products: selectedProducts,
-    };
-    sessionStorage.setItem(ENQUIRY_STORAGE_KEY, JSON.stringify(draft));
+    const draft = readEnquiryDraft(sessionStorage);
+    writeEnquiryDraft(sessionStorage, {
+      ...draft,
+      formulations: selectedProducts,
+    });
     
     router.push("/contact");
   };

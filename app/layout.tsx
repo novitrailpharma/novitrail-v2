@@ -99,7 +99,7 @@ const jsonLd = {
     "@type": "ContactPoint",
     telephone: "+91-9990115992",
     contactType: "sales",
-    email: "info@novitrail.com",
+    email: "novitrailpharma1@gmail.com",
     availableLanguage: ["English", "Hindi"],
   },
   sameAs: [

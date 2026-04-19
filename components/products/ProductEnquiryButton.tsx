@@ -1,7 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ENQUIRY_STORAGE_KEY, type EnquiryDraft } from "@/lib/enquiry";
+import {
+  mergeUniqueValues,
+  readEnquiryDraft,
+  writeEnquiryDraft,
+} from "@/lib/enquiry";
 
 type Props = {
   productName: string;
@@ -11,12 +15,11 @@ export default function ProductEnquiryButton({ productName }: Props) {
   const router = useRouter();
 
   const handleClick = () => {
-    const draft: EnquiryDraft = {
-      source: "product",
-      products: [productName],
-    };
-
-    sessionStorage.setItem(ENQUIRY_STORAGE_KEY, JSON.stringify(draft));
+    const draft = readEnquiryDraft(sessionStorage);
+    writeEnquiryDraft(sessionStorage, {
+      ...draft,
+      products: mergeUniqueValues(draft.products, [productName]),
+    });
     router.push("/contact");
   };
 

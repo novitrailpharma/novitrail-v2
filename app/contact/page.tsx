@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Mail, Phone, MapPin, ChevronDown } from "lucide-react";
 import countriesData from "@/data/countries.json"; // Importing your JSON
 import {
-  buildEnquiryMessage,
-  ENQUIRY_STORAGE_KEY,
+  getEmptyEnquiryDraft,
+  readEnquiryDraft,
   type EnquiryDraft,
+  writeEnquiryDraft,
 } from "@/lib/enquiry";
 import TurnstileWidget from "@/components/contact/TurnstileWidget";
 
@@ -22,10 +24,10 @@ function ContactForm() {
     email: "",
     company: "",
     country: "",
-    message: "",
+    remarks: "",
   });
 
-  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [enquiryDraft, setEnquiryDraft] = useState<EnquiryDraft>(getEmptyEnquiryDraft);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedAt] = useState(() => Date.now());
   const [submitState, setSubmitState] = useState<{
@@ -39,35 +41,28 @@ function ContactForm() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetCount, setTurnstileResetCount] = useState(0);
 
-  // Effect: Prefill message if products are found in Session Storage or URL
+  // Effect: Prefill selected items if products are found in Session Storage or URL
   useEffect(() => {
-    let list: string[] = [];
-    let source: EnquiryDraft["source"] = "formulations";
-    const stored = sessionStorage.getItem(ENQUIRY_STORAGE_KEY);
-    if (stored) {
-      try {
-        const draft = JSON.parse(stored) as EnquiryDraft;
-        list = draft.products;
-        source = draft.source;
-      } catch {}
-    }
+    const draft = readEnquiryDraft(sessionStorage);
+    let nextDraft = draft;
 
     if (productsInterest) {
-      list = productsInterest.split(",").map((p) => p.trim());
-      source = "formulations";
+      nextDraft = {
+        ...nextDraft,
+        formulations: productsInterest.split(",").map((p) => p.trim()).filter(Boolean),
+      };
     } else if (productInterest) {
-      list = [productInterest.trim()];
-      source = "product";
+      nextDraft = {
+        ...nextDraft,
+        products: [productInterest.trim()],
+      };
     }
 
-    if (list.length > 0) {
-      setSelectedProducts(list);
-
-      setForm((prev) => ({
-        ...prev,
-        message: buildEnquiryMessage(list, source),
-      }));
+    if (nextDraft.products.length > 0 || nextDraft.formulations.length > 0) {
+      writeEnquiryDraft(sessionStorage, nextDraft);
     }
+
+    setEnquiryDraft(nextDraft);
   }, [productInterest, productsInterest]);
 
   const handleChange = (
@@ -77,14 +72,17 @@ function ContactForm() {
       setSubmitState({ type: "idle", message: "" });
     }
 
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
   };
 
   const isFormReady =
     form.name.trim() !== "" &&
-    form.email.includes("@") &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()) &&
+    form.company.trim() !== "" &&
     form.country.trim() !== "" &&
-    form.message.trim() !== "" &&
+    form.remarks.trim() !== "" &&
     turnstileToken.trim() !== "";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -106,7 +104,8 @@ function ContactForm() {
           ...form,
           website,
           submittedAt,
-          selectedProducts,
+          selectedProducts: enquiryDraft.products,
+          selectedFormulations: enquiryDraft.formulations,
           turnstileToken,
         }),
       });
@@ -131,10 +130,10 @@ function ContactForm() {
         email: "",
         company: "",
         country: "",
-        message: "",
+        remarks: "",
       });
-      sessionStorage.removeItem(ENQUIRY_STORAGE_KEY);
-      setSelectedProducts([]);
+      writeEnquiryDraft(sessionStorage, getEmptyEnquiryDraft());
+      setEnquiryDraft(getEmptyEnquiryDraft());
       setTurnstileResetCount((count) => count + 1);
     } catch {
       setSubmitState({
@@ -159,6 +158,7 @@ function ContactForm() {
             className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200"
             onChange={handleChange}
             value={form.name}
+            required
           />
           <input
             name="email"
@@ -167,6 +167,7 @@ function ContactForm() {
             className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200"
             onChange={handleChange}
             value={form.email}
+            required
           />
         </div>
 
@@ -177,6 +178,7 @@ function ContactForm() {
             className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200"
             onChange={handleChange}
             value={form.company}
+            required
           />
 
           {/* Country Dropdown */}
@@ -203,13 +205,16 @@ function ContactForm() {
         </div>
 
         <textarea
-          name="message"
-          placeholder="Your enquiry (products, quantities, market, etc.)"
-          rows={5}
-          className="w-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200 resize-none"
+          name="remarks"
+          placeholder="Enquiry details / remarks (quantity, market, dosage preference, timeline, packaging, etc.)"
+          rows={4}
+          className="w-full min-h-32 max-h-[calc(100vh-8rem)] border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-bg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-novitrail-orange/20 focus:border-novitrail-orange transition-all placeholder:text-slate-400 dark:text-gray-200 resize-y"
           onChange={handleChange}
-          value={form.message}
+          value={form.remarks}
+          required
         />
+
+        <SelectedItemsPanel draft={enquiryDraft} />
 
         <input
           tabIndex={-1}
@@ -223,7 +228,7 @@ function ContactForm() {
         />
 
         {turnstileSiteKey ? (
-          <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-dark-bg">
+          <div className="flex justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-dark-bg">
             <TurnstileWidget
               siteKey={turnstileSiteKey}
               onTokenChange={setTurnstileToken}
@@ -259,6 +264,72 @@ function ContactForm() {
           {isSubmitting ? "Sending Enquiry..." : "Submit Enquiry"}
         </button>
       </form>
+    </div>
+  );
+}
+
+function SelectedItemsPanel({ draft }: { draft: EnquiryDraft }) {
+  return (
+    <div className="grid gap-5">
+      <SelectionTable title="Our Products" items={draft.products} editHref="/products" />
+      <SelectionTable title="Formulations" items={draft.formulations} editHref="/formulations" />
+    </div>
+  );
+}
+
+function SelectionTable({
+  title,
+  items,
+  editHref,
+}: {
+  title: string;
+  items: string[];
+  editHref: string;
+}) {
+  return (
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-dark-bg">
+      <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-slate-700">
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{title}</h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Read-only selection table</p>
+        </div>
+        <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-novitrail-orange dark:bg-orange-950/40">
+          {items.length} selected
+        </span>
+        <Link
+          href={editHref}
+          className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-novitrail-orange hover:text-novitrail-orange dark:border-slate-700 dark:text-slate-300"
+        >
+          Edit
+        </Link>
+      </div>
+
+      <div className="max-h-48 overflow-y-auto bg-white custom-scrollbar dark:bg-dark-bg">
+        <table className="w-full border-collapse text-sm">
+          <thead className="sticky top-0 z-10 bg-slate-50 text-left text-xs uppercase tracking-wider text-slate-500 shadow-sm dark:bg-slate-800 dark:text-slate-400">
+            <tr>
+              <th className="w-14 px-3 py-2 font-semibold">No.</th>
+              <th className="px-3 py-2 font-semibold">Item</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+            {items.length > 0 ? (
+              items.map((item, index) => (
+                <tr key={`${title}-${index}-${item}`}>
+                  <td className="px-3 py-2 text-slate-500 dark:text-slate-400">{index + 1}</td>
+                  <td className="px-3 py-2 font-medium text-slate-800 dark:text-slate-200">{item}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td className="px-3 py-3 text-slate-400" colSpan={2}>
+                  No {title.toLowerCase()} selected.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
